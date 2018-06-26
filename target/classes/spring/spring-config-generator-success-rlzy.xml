@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.platform.generator" />
+
+	<bean id="generatorConfigList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="generatorConfig" />
+				<!-- <ref bean="generatorConfig1"/> D:/sts-bundle/platform/platform-admin-->
+			</list>
+		</constructor-arg>
+	</bean>
+	
+<!-- 	D:/springsource/workspace_work/platform-permit
+	D:/springsource2/workspace/plat/platform-permit
+	E:/sts/workspace/platform/platform-permit
+	D:/sts-bundle/workspace_mda/platform-base 
+	D:/sts-bundle/platform/platform-admin/
+	-->
+	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
+		<property name="basePath" value="D:/sts-bundle/workspace/yonyou-financial-alm/" />
+		<property name="tableNames" value="MKTTERMDEF"></property>
+		<property name="dbName" value="orcl"></property>
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="generatorBeanMap">
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="generatorBean" value-ref="generatorBean"></entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="typeConver" class="com.platform.generator.interfaces.impl.DefaultTypeConver"></bean>
+
+	<bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
+		<property name="packageName" value="com.yonyou.financial.zm" />
+		<property name="configList">
+			<bean class="java.util.ArrayList">
+				<constructor-arg>
+					<list>
+						<value>{
+							"path":"/yonyou-financial-zm-domain/src/main/java/",
+							"parentClassName":"",
+							"parentPackageName":"",
+							"templateName":"template_model",
+							"fileType":"java","fileNameSuffix":"","packageSuffix":"domain.!allLowerTName!"}
+						</value>
+						
+						<value>{
+							"path":"/yonyou-financial-zm-domain/src/main/java/",
+							"parentClassName":"BaseQuery","parentPackageName":"com.platform.common.utils.query",
+							"templateName":"template_query",
+							"fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
+						}
+						</value>
+						
+						<value>{
+							"path":"/yonyou-financial-zm-dao/src/main/resources/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_sqlmap","fileType":"xml",
+							"fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"
+							}
+						</value>
+						
+						<!-- dao -->
+						<value>{
+							"path":"/yonyou-financial-zm-dao/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_dao",
+							"fileType":"java","fileNameSuffix":"Dao","packageSuffix":"dao.!allLowerTName!"
+						}
+						</value>
+						
+						<value>{
+							"path":"/yonyou-financial-zm-dao/src/main/java/",
+							"parentClassName":"SqlSessionDaoSupport","parentPackageName":"org.mybatis.spring.support",
+							"templateName":"template_daoImpl",
+							"fileType":"java","fileNameSuffix":"DaoImpl","packageSuffix":"dao.!allLowerTName!.impl"
+						}
+						</value>
+						<!-- dao -->
+						
+						<!-- service -->
+						<value>{
+							"path":"/yonyou-financial-zm-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_service",
+							"fileType":"java","fileNameSuffix":"Service","packageSuffix":"service.!myadmintag!"
+						}
+						</value>
+						
+						<value>{
+							"path":"/yonyou-financial-zm-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_serviceImpl",
+							"fileType":"java","fileNameSuffix":"ServiceImpl","packageSuffix":"service.!myadmintag!.impl"
+						}
+						</value>
+						
+						<value>{
+							"path":"/yonyou-financial-zm-service/src/test/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_serviceImplTest",
+							"fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
+						}
+						</value>
+						<!-- service end -->
+						
+						<!-- action start-->
+						<value>{
+							"path":"/yonyou-financial-zm-web/src/main/java/",
+							"parentClassName":"BaseController","parentPackageName":"com.platform.common.spring.mvc.controller",
+							"templateName":"template_web",
+							"fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"
+						}
+						</value>
+						<!-- action end -->
+						
+						<!-- web page start -->
+						<value>{
+							"path":"/yonyou-financial-zm-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_web_page",
+							"fileType":"vm","fileNameSuffix":"","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						
+												<!-- 
+						
+						<value>{
+							"path":"/success-admin-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_web_insert_page",
+							"fileType":"vm","fileNameSuffix":"Insert","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						 -->
+						
+						<value>{
+							"path":"/yonyou-financial-zm-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_web_edit_page",
+							"fileType":"vm","fileNameSuffix":"Edit","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<!-- page end start -->
+						
+					<!-- 	<value>{
+							"path":"/yonyou-financial-zm-web/src/main/resources",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_struts",
+							"fileType":"xml","fileNameSuffix":"","packageSuffix":"struts.!myadmintag!"
+						}
+						</value> -->
+						
+					</list>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
