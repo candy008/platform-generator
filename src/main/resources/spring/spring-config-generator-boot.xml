@@ -96,7 +96,69 @@
 						</value>
 						<!-- mapping -->
 						
+						<!-- dao -->
+						<value>{
+							"path":"/imfbp-istorewares-dao/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"dao/template_dao",
+							"fileType":"java","fileNameSuffix":"Dao","packageSuffix":"dao.!allLowerTName!"
+						}
+						</value>
 						
+						<value>{
+							"path":"/imfbp-istorewares-dao/src/main/java/",
+							"parentClassName":"SqlSessionDaoSupport","parentPackageName":"org.mybatis.spring.support",
+							"templateName":"dao/template_daoImpl",
+							"fileType":"java","fileNameSuffix":"DaoImpl","packageSuffix":"dao.!allLowerTName!.impl"
+						}
+						</value>
+						<!-- dao -->
+						
+						<!-- service -->
+						<value>{
+							"path":"/imfbp-istorewares-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"service/template_service",
+							"fileType":"java","fileNameSuffix":"Service","packageSuffix":"service.!myadmintag!"
+						}
+						</value>
+						
+						<value>{
+							"path":"/imfbp-istorewares-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"service/template_serviceImpl",
+							"fileType":"java","fileNameSuffix":"ServiceImpl","packageSuffix":"service.!myadmintag!.impl"
+						}
+						</value>
+						
+						<!-- <value>{
+							"path":"/imfbp-istorewares-service/src/test/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"service/template_serviceImplTest",
+							"fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
+						}
+						</value> -->
+						<!-- service end -->
+						
+						<!-- controller start-->
+						<value>{
+							"path":"/imfbp-istorewares-admin/src/main/java/",
+							"parentClassName":"BaseController","parentPackageName":"com.imfbp.boot.common.spring.mvc.controller",
+							"templateName":"controller/template_controller",
+							"fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"
+						}
+						</value>
+						<!-- controller end -->
+						
+						<!-- controller start-->
+						<value>{
+							"path":"/imfbp-istorewares-web/src/main/java/",
+							"parentClassName":"BaseController","parentPackageName":"com.imfbp.boot.common.spring.mvc.controller",
+							"templateName":"controller/template_controller",
+							"fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"
+						}
+						</value>
+						<!-- controller end -->
 						
 						
 						
