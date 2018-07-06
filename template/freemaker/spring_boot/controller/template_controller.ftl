@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-
-import com.platform.common.seculity.annotation.AccessSeculity;
-import com.platform.common.web.result.GridResult;
-import com.platform.common.web.result.Result;
-import com.platform.common.spring.mvc.controller.BaseController;
+import com.imfbp.boot.common.annotation.AccessSeculity;
+import com.imfbp.boot.common.spring.mvc.controller.BaseController;
+import com.imfbp.boot.common.web.result.GridResult;
+import com.imfbp.boot.common.web.result.Result;
 
 import ${cfb.packageName}.domain.${mytagprizepackage1}.${tb.fUpperTName};
 import ${cfb.packageName}.domain.${mytagprizepackage1}.query.${tb.fUpperTName}Query;
@@ -29,25 +28,8 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 	private ${tb.fUpperTName}Service ${tb.fLowerTName}Service;
 	
 	/**
-	 *  跳转到${tb.fUpperTName}首页
-	 * @param ${tb.fLowerTName}Query
-	 * @param req
-	 * @param resp
-	 * @param context
-	 * @return
-	 */
-	@AccessSeculity(code="PERMITVALUE_PERMITVALUE")
-	@RequestMapping(value = "${tb.fLowerTName}/to${tb.fUpperTName}Page", method = { RequestMethod.POST,RequestMethod.GET })
-	public ModelAndView to${tb.fUpperTName}Page(${tb.fUpperTName}Query ${tb.fLowerTName}Query,HttpServletRequest req, HttpServletResponse resp, ModelMap context) {
-		Result result = new Result();
-		toVm(result, context, req);
-		ModelAndView mv = new ModelAndView("${tb.fLowerTName}/${tb.fLowerTName}");
-		return mv;
-	}
-
-	/**
 	 *  查询所有
-	 * @param mktsetlistQuery
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -65,7 +47,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 * 分页查询
-	 * @param mktsetlistQuery
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -83,7 +65,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 * 根据id查询
-	 * @param mktsetlistQuery
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -98,7 +80,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 *  添加或修改
-	 * @param mktsetlist
+	 * @param ${tb.fLowerTName}
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -112,7 +94,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 *  根据Id批量删除 (真正删除数据库数据)
-	 * @param batchId
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -126,7 +108,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 	
 	/**
 	 * 根据Id批量逻辑删除(修改数据库数据为删除状态)
-	 * @param batchId
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context

@@ -7,10 +7,10 @@ import java.util.Hashtable;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import com.platform.common.utils.page.PaginatedList;
-import com.platform.common.utils.page.impl.MysqlPaginatedArrayList;
-import com.platform.common.web.result.GridResult;
-import com.platform.common.web.result.Result;
+import com.imfbp.boot.common.utils.page.PaginatedList;
+import com.imfbp.boot.common.utils.page.impl.MysqlPaginatedArrayList;
+import com.imfbp.boot.common.web.result.GridResult;
+import com.imfbp.boot.common.web.result.Result;
 
 import ${cfb.packageName}.domain.${mytagprizepackage1}.${tb.fUpperTName};
 import ${cfb.packageName}.domain.${mytagprizepackage1}.query.${tb.fUpperTName}Query;
@@ -37,7 +37,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据Id删除 (真正删除数据库数据)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据Id逻辑删除 (修改数据库数据为删除状态)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -158,7 +158,8 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据条件修改
-	 * @param data
+	 * @param record
+	 * @param parameter
 	 * @return
 	 */
 	@Override

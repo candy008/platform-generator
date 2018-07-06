@@ -2,8 +2,8 @@ package ${cfb.packageName}.${cfb.packageSuffix};
 
 import java.util.List;
 
-import com.platform.common.web.result.GridResult;
-import com.platform.common.web.result.Result;
+import com.imfbp.boot.common.web.result.GridResult;
+import com.imfbp.boot.common.web.result.Result;
 
 import ${cfb.packageName}.domain.${mytagprizepackage1}.${tb.fUpperTName};
 import ${cfb.packageName}.domain.${mytagprizepackage1}.query.${tb.fUpperTName}Query;
@@ -19,7 +19,7 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据Id删除
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	public boolean delete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query);
@@ -40,7 +40,7 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据Id逻辑删除 (修改数据库数据为删除状态)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	public boolean logicDelete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query);
@@ -68,21 +68,22 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据Id修改
-	 * @param id
+	 * @param ${tb.fLowerTName}
 	 * @return
 	 */
 	public boolean update${tb.fUpperTName}ById(${tb.fUpperTName} ${tb.fLowerTName});
 	
 	/**
 	 * 根据条件修改
-	 * @param data
+	 * @param record
+	 * @param parameter
 	 * @return
 	 */
 	public boolean update${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query record,${tb.fUpperTName}Query parameter);
 	
 	/**
 	 * 根据id查询
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	public ${tb.fUpperTName} get${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query);

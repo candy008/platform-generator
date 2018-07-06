@@ -31,7 +31,7 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据主键批量删除 (真正删除数据库数据)
-	 * @param ${tb.fLowerTName}Query
+	 * @param data
 	 * @return
 	 */
 	public boolean delete${tb.fUpperTName}ByBatchId(Map<String,Object> data);
@@ -52,7 +52,7 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据主键批量逻辑删除 (修改数据库数据为删除状态)
-	 * @param ${tb.fLowerTName}Query
+	 * @param data
 	 * @return
 	 */
 	public boolean logicDelete${tb.fUpperTName}ByBatchId(Map<String,Object> data);
@@ -60,7 +60,7 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据Id修改
-	 * @param ${tb.fLowerTName}Query
+	 * @param ${tb.fLowerTName}
 	 * @return
 	 */
 	public boolean update${tb.fUpperTName}ById(${tb.fUpperTName} ${tb.fLowerTName});

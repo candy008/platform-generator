@@ -18,7 +18,7 @@ public class GeneratorCenter {
 	
 	private List<GeneratorConfig> generatorConfigList;
 	
-	public final static String TEMPPLATE_PATH = "D:/dev/sts-bundle/workspace/platform-generator/template/freemaker/spring_boot";
+	public final static String TEMPPLATE_PATH = "/Users/quanjj/IdeaProjects/platform-generator/template/freemaker/spring_boot";
 	
 	private GeneratorDao generatorDao;
 	

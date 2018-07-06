@@ -14,17 +14,21 @@
 		<constructor-arg>
 			<list>
 				<ref bean="generatorConfig" />
-				<!-- <ref bean="generatorConfig1"/> -->
+				<!-- <ref bean="generatorConfig1"/> D:/sts-bundle/platform/success-demo-->
 			</list>
 		</constructor-arg>
 	</bean>
 <!-- 	D:/springsource/workspace_work/platform-permit
 D:/springsource2/workspace/plat/platform-permit
-	E:/sts/workspace/platform/platform-permit -->
+	E:/sts/workspace/platform/platform-permit
+	D:/sts-bundle/workspace_mda/platform-base 
+	D:/sts-bundle/platform/success-demo/
+	
+	-->
 	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
-		<property name="basePath" value="D:/sts-bundle/workspace/vip-club"></property>
-		<property name="tableNames" value="plat_mda_connection"></property>
-		<property name="dbName" value="dongao_test"></property>
+		<property name="basePath" value="D:/mod" />
+		<property name="tableNames" value="action"></property>
+		<property name="dbName" value="test"></property>
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="generatorBeanMap">
 			<bean class="java.util.HashMap">
@@ -38,13 +42,13 @@ D:/springsource2/workspace/plat/platform-permit
 	</bean>
 
 	<bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
-		<property name="packageName" value="com.platform.mda" />
+		<property name="packageName" value="com.success.demo" />
 		<property name="configList">
 			<bean class="java.util.ArrayList">
 				<constructor-arg>
 					<list>
 						<value>{
-							"path":"/vip-club-domain/src/main/java/",
+							"path":"/success-demo-domain/src/main/java/",
 							"parentClassName":"",
 							"parentPackageName":"",
 							"templateName":"template_model",
@@ -52,25 +56,24 @@ D:/springsource2/workspace/plat/platform-permit
 						</value>
 						
 						<value>{
-							"path":"/vip-club-domain/src/main/java/",
-							"parentClassName":"PlatformMdaQuery","parentPackageName":"com.platform.mda.commons.query",
+							"path":"/success-demo-domain/src/main/java/",
+							"parentClassName":"BaseQuery","parentPackageName":"com.platform.common.utils.query",
 							"templateName":"template_query",
 							"fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
 						}
 						</value>
 						
 						<value>{
-							"path":"/vip-club-dao/src/main/resources/",
+							"path":"/success-demo-dao/src/main/resources/",
 							"parentClassName":"","parentPackageName":"",
 							"templateName":"template_sqlmap","fileType":"xml",
 							"fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"
 							}
 						</value>
 						
-						
-						 <!-- dao -->
+							 <!-- dao -->
 						<value>{
-							"path":"/vip-club-dao/src/main/java/",
+							"path":"/success-demo-dao/src/main/java/",
 							"parentClassName":"","parentPackageName":"",
 							"templateName":"template_dao",
 							"fileType":"java","fileNameSuffix":"Dao","packageSuffix":"dao.!allLowerTName!"
@@ -78,45 +81,17 @@ D:/springsource2/workspace/plat/platform-permit
 						</value>
 						
 						<value>{
-							"path":"/vip-club-dao/src/main/java/",
-							"parentClassName":"BaseDao","parentPackageName":"com.platform.base.dao",
+							"path":"/success-demo-dao/src/main/java/",
+							"parentClassName":"SqlSessionDaoSupport","parentPackageName":"org.mybatis.spring.support",
 							"templateName":"template_daoImpl",
 							"fileType":"java","fileNameSuffix":"DaoImpl","packageSuffix":"dao.!allLowerTName!.impl"
 						}
 						</value>
 						<!-- dao -->
 						
-	
-						<!-- manager
+						<!-- service -->
 						<value>{
-							"path":"/vip-club-manager/src/main/java/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_manager",
-							"fileType":"java","fileNameSuffix":"Manager","packageSuffix":"manager.!myadmintag!"
-								
-						}
-						</value>
-						<value>{
-							"path":"/vip-club-manager/src/main/java/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_managerImpl",
-							"fileType":"java","fileNameSuffix":"ManagerImpl","packageSuffix":"manager.!myadmintag!.impl"
-						}
-						</value>
-						<value>{
-							"path":"/vip-club-manager/src/test/java/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_managerImplTest",
-							"fileType":"java","fileNameSuffix":"ManagerTest","packageSuffix":"manager.!myadmintag!"
-						}
-						</value>
-						-->
-						<!-- manager-->
-						
-						
-						<!-- server -->
-						<value>{
-							"path":"/vip-club-service/src/main/java/",
+							"path":"/success-demo-service/src/main/java/",
 							"parentClassName":"","parentPackageName":"",
 							"templateName":"template_service",
 							"fileType":"java","fileNameSuffix":"Service","packageSuffix":"service.!myadmintag!"
@@ -124,7 +99,7 @@ D:/springsource2/workspace/plat/platform-permit
 						</value>
 						
 						<value>{
-							"path":"/vip-club-service/src/main/java/",
+							"path":"/success-demo-service/src/main/java/",
 							"parentClassName":"","parentPackageName":"",
 							"templateName":"template_serviceImpl",
 							"fileType":"java","fileNameSuffix":"ServiceImpl","packageSuffix":"service.!myadmintag!.impl"
@@ -132,81 +107,61 @@ D:/springsource2/workspace/plat/platform-permit
 						</value>
 						
 						<value>{
-							"path":"/vip-club-service/src/test/java/",
+							"path":"/success-demo-service/src/test/java/",
 							"parentClassName":"","parentPackageName":"",
 							"templateName":"template_serviceImplTest",
 							"fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
 						}
 						</value>
+						<!-- service end -->
 						
-						
+						<!-- action start-->
 						<value>{
-							"path":"/vip-club-web/src/test/java/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_serviceImplTest",
-							"fileType":"java","fileNameSuffix":"Test","packageSuffix":"service.!myadmintag!.impl"
+							"path":"/success-demo-web/src/main/java/",
+							"parentClassName":"BaseAction","parentPackageName":"com.platform.common.struts.action",
+							"templateName":"template_web",
+							"fileType":"java","fileNameSuffix":"Action","packageSuffix":"action.!myadmintag!"
 						}
 						</value>
-						<!-- server -->
-					
+						<!-- action end -->
 						
-						
-						<!-- ext-grid 
+						<!-- web page start -->
 						<value>{
-							"path":"/platform-mda-web/src/main/webapp/",
+							"path":"/success-demo-web/src/main/webapp/",
 							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_grid",
-							"fileType":"js","fileNameSuffix":"Grid","packageSuffix":"!myaextjstag!.view",
-							"packageName":"platform.permit"
-						}
-						</value>
-					
-						<value>{
-							"path":"/platform-mda-web/src/main/webapp/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_extjsmodel",
-							"fileType":"js","fileNameSuffix":"Model","packageSuffix":"!myaextjstag!.model",
-							"packageName":"platform.permit"
+							"templateName":"template_web_page",
+							"fileType":"vm","fileNameSuffix":"","packageSuffix":"!myadmintag!"
 						}
 						</value>
 						
+												<!-- 
+						
 						<value>{
-							"path":"/platform-mda-web/src/main/webapp/",
+							"path":"/success-demo-web/src/main/webapp/",
 							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_extjsstore",
-							"fileType":"js","fileNameSuffix":"Store","packageSuffix":"!myaextjstag!.store",
-							"packageName":"platform.permit"
+							"templateName":"template_web_insert_page",
+							"fileType":"vm","fileNameSuffix":"Insert","packageSuffix":"!myadmintag!"
 						}
 						</value>
 						
-						<value>{
-							"path":"/platform-mda-web/src/main/webapp/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"template_extjs_Edit",
-							"fileType":"js","fileNameSuffix":"Form","packageSuffix":"!myaextjstag!.view",
-							"packageName":"platform.permit"
-						}
-						</value>
-						
-					
-						<value>{
-							"path":"/platform-mda-web/src/main/webapp/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"extjs_controllerGrid",
-							"fileType":"js","fileNameSuffix":"Controller","packageSuffix":"!myaextjstag!.controller",
-							"packageName":"platform.permit"
-						}
-						</value>
+						 -->
 						
 						<value>{
-							"path":"/platform-mda-web/src/main/webapp/",
+							"path":"/success-demo-web/src/main/webapp/",
 							"parentClassName":"","parentPackageName":"",
-							"templateName":"extjs_controllerForm",
-							"fileType":"js","fileNameSuffix":"FormController","packageSuffix":"!myaextjstag!.controller",
-							"packageName":"platform.permit"
+							"templateName":"template_web_edit_page",
+							"fileType":"vm","fileNameSuffix":"Edit","packageSuffix":"!myadmintag!"
 						}
 						</value>
-						 ext-grid -->
+						<!-- page end start -->
+						
+						<value>{
+							"path":"/success-demo-web/src/main/resources",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_struts",
+							"fileType":"xml","fileNameSuffix":"","packageSuffix":"struts.!myadmintag!"
+						}
+						</value>
 						
 					</list>
 				</constructor-arg>

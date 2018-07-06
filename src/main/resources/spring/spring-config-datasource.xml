@@ -24,8 +24,4 @@
 		<property name="driverClass" value="${qx.defaule.mysql.jdbc.driverClass}" />
 	</bean>
 
-
-
-
-
 </beans>

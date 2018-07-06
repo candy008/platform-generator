@@ -87,7 +87,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} extends ${cfb.parentClassNam
 	
 	/**
 	 * 修改
-	 * @param ${tb.fLowerTName}Query
+	 * @param ${tb.fLowerTName}
 	 * @return
 	 */	
 	@Override
@@ -127,7 +127,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} extends ${cfb.parentClassNam
 	
 	/**
 	 * 分页查询
-	 * @param permitOperation
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} extends ${cfb.parentClassNam
 	
 	/**
 	 * 分页查询查询总数
-	 * @param permitOperation
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override

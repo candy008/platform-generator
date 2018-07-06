@@ -134,8 +134,12 @@ public class DefaultGeneratorFile implements GeneratorFile {
 					
 					String filename = generatorTable.getfUpperTName()+fileNameSuffix+"."+fileType;
 					
+					if(filename.contains("Extend")) {
+						System.out.println(filename);
+					}
+					
 					String path = generatorBean.getPackageName().replace(".", "/");
-					if(fileNameSuffix.equals("Mapper")){
+					if(fileNameSuffix.contains("Mapper")){
 						path="";
 						filename = generatorTable.getfLowerTName() +fileNameSuffix+"."+fileType;
 					}else if(fileType.equals("vm")){
@@ -212,7 +216,7 @@ public class DefaultGeneratorFile implements GeneratorFile {
 			}
 			
 			cf.setDirectoryForTemplateLoading(new File(GeneratorCenter.TEMPPLATE_PATH+templatePath));
-			tpl = cf.getTemplate(templateName + ".ftl");
+			tpl = cf.getTemplate(templateName + ".ftl","utf-8");
 
 			File tempfile = new File(generatorFilePath);
 			if (!tempfile.exists()) {
