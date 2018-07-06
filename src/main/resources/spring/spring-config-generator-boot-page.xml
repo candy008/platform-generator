@@ -14,21 +14,14 @@
 		<constructor-arg>
 			<list>
 				<ref bean="generatorConfig" />
-				<!-- <ref bean="generatorConfig1"/> D:/sts-bundle/platform/platform-admin-->
 			</list>
 		</constructor-arg>
 	</bean>
-	
-<!-- 	D:/springsource/workspace_work/platform-permit
-	D:/springsource2/workspace/plat/platform-permit
-	E:/sts/workspace/platform/platform-permit
-	D:/sts-bundle/workspace_mda/platform-base 
-	D:/sts-bundle/platform/platform-admin/
-	-->
+
 	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
-		<property name="basePath" value="D:/sts-bundle/workspace_boss/imfbp-loan/" />
-		<property name="tableNames" value="%"></property>
-		<property name="dbName" value="microloan"></property>
+		<property name="basePath" value="/Users/quanjj/Documents/dev/istore-adminweb" />
+		<property name="tableNames" value="m_grid_layout"></property>
+		<property name="dbName" value="istore_main_jzy"></property>
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="generatorBeanMap">
 			<bean class="java.util.HashMap">
@@ -44,20 +37,49 @@
 	<bean id="typeConver" class="com.platform.generator.interfaces.impl.DefaultTypeConver"></bean>
 
 	<bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
-		<property name="packageName" value="com.imfbp.loan" />
+		<property name="packageName" value="com.imfbp.core" />
 		<property name="configList">
 			<bean class="java.util.ArrayList">
 				<constructor-arg>
 					<list>
-
+						<!-- page List -->
+						<value>{
+							"path":"/boss_web/src/pages/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_list_page",
+							"fileType":"vue","fileNameSuffix":"List","packageSuffix":"!myadmintag!"}
+						</value>
+						<!-- page List -->
 						
 						<value>{
-							"path":"/imfbp-loan-service/src/test/java/",
+							"path":"/boss_web/src/pages/",
 							"parentClassName":"","parentPackageName":"",
-							"templateName":"service/template_serviceImplTest",
-							"fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
+							"templateName":"page/template_edit_page",
+							"fileType":"vue","fileNameSuffix":"Edit","packageSuffix":"!myadmintag!"
 						}
 						</value>
+						<value>{
+							"path":"/boss_web/src/pages/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_detail",
+							"fileType":"vue","fileNameSuffix":"Detail","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<value>{
+							"path":"/boss_web/src/assets/model",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_model",
+							"fileType":"js","fileNameSuffix":"Model","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<value>{
+							"path":"/boss_web/data",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_btn_json_page",
+							"fileType":"json","fileNameSuffix":"Btn","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						
 					</list>
 				</constructor-arg>
 			</bean>
