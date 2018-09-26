@@ -14,7 +14,7 @@
 	<!-- <import resource="spring/spring-config-generator-success-rlzy.xml" />  -->
 	<!-- <import resource="spring/spring-config-generator-springmvc_rz.xml" /> -->
 	<!-- <import resource="spring/spring-config-generator-springmvc_bj.xml" /> -->
-	<import resource="spring/spring-config-generator-springmvc_ins.xml" />
+	<import resource="spring/wangxiao/spring-config-generator-wares.xml" />
 	<!-- <import resource="spring/spring-config-generator-0wangxiao.xml" /> -->
 	<import resource="spring/spring-config-datasource.xml" />
 

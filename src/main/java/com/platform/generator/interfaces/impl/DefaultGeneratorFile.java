@@ -10,11 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.util.StringUtils;
-
-import net.sf.json.JSONObject;
-
-import com.platform.generator.AllDataCenter;
 import com.platform.generator.GeneratorCenter;
 import com.platform.generator.bean.GeneratorBean;
 import com.platform.generator.bean.GeneratorTable;
@@ -25,6 +20,7 @@ import com.platform.generator.util.ConfEnum;
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
+import net.sf.json.JSONObject;
 
 public class DefaultGeneratorFile implements GeneratorFile {
 	

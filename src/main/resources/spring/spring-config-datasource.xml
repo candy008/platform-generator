@@ -23,9 +23,4 @@
 		<property name="jdbcUrl" value="${qx.defaule.mysql.jdbc.jdbcUrl}" />
 		<property name="driverClass" value="${qx.defaule.mysql.jdbc.driverClass}" />
 	</bean>
-
-
-
-
-
 </beans>
