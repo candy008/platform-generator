@@ -1,0 +1,30 @@
+[
+[
+	{
+		"btnName":"新增",
+		"btnValue":"addFun",
+		"btnIcon":"",
+		"btnType":"el-button--primary"
+	}
+],
+[
+	{
+		"btnName":"修改",
+		"btnValue":"editFun",
+		"btnIcon":"",
+		"btnType":""
+	},
+	{
+		"btnName":"删除",
+		"btnValue":"deleteFun",
+		"btnIcon":"",
+		"btnType":""
+	},
+	{
+		"btnName":"刷新",
+		"btnValue":"refreshFun",
+		"btnIcon":"",
+		"btnType":""
+	}
+]
+]

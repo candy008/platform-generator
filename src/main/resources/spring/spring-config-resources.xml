@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.platform.generator" />
+
+	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
+		<property name="basePath" value="D:\a"></property>
+		<property name="dataSource" ref="dataSource1"></property>
+		<property name="generatorBeanMap" >
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="generatorBeanMolde" value-ref="generatorBeanMolde"></entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="generatorBeanMolde" class="com.platform.generator.bean.GeneratorBean">
+		<property name="parentClassName" value="BaseDao" />
+		<property name="parentPackageName" value="com.qjj.base" />
+		<property name="packageName" value="com.qjj.test" />
+		<property name="templates">
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="template_model" value=".java" />
+						<entry key="template_dao" value="Dao.java" />
+						<entry key="template_daoImpl" value="DaoImpl.java" />
+						<entry key="template_manager" value="Manager.java" />
+						<entry key="template_managerImp" value="ManagerImpl.java" />
+						<entry key="template_service" value="Service.java" />
+						<entry key="template_serviceImpl" value="ServiceImpl.java" />
+						<entry key="template_sqlmap" value="Sqlmap.xml" />
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="interfaceMap">
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="List" value="java.util.List" />
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>
