@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.platform.generator" />
+
+	<bean id="generatorConfigList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="generatorConfig" />
+				<!-- <ref bean="generatorConfig1"/> -->
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
+		<property name="basePath" value="D:/bb/"></property>
+<!-- 		<property name="basePath" value="D:/springsource/workspace/admin_club/jd_sns_vip_java/"></property> -->
+		<property name="tableNames" value="vip_club_coupon_purchase"></property>
+		<property name="dbName" value="vip_club"></property>
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="generatorBeanMap">
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="generatorBean" value-ref="generatorBean"></entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
+		<property name="packageName" value="com.jd.sns.vip" />
+		<property name="configList">
+			<bean class="java.util.ArrayList">
+				<constructor-arg>
+					<list>
+						
+						<!-- ////////////////////////////////soa/////////////////////////////// -->
+						
+						<!-- manager soa -->
+						<value>{
+							"path":"/jd-sns-vip-manager/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_managersoa",
+							"fileType":"java","fileNameSuffix":"ManagerSoa","packageSuffix":"manager.!mysoatag!"
+								
+						}
+						</value>
+						
+						<value>{
+							"path":"/jd-sns-vip-manager/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_managerImplsoa",
+							"fileType":"java","fileNameSuffix":"ManagerSoaImpl","packageSuffix":"manager.!mysoatag!.impl"
+						}
+						</value>
+						
+						<value>{
+							"path":"/jd-sns-vip-manager/src/test/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_managerImplTestsoa",
+							"fileType":"java","fileNameSuffix":"ManagerTestSoa","packageSuffix":"manager.!mysoatag!"
+						}
+						</value>
+						
+						<!-- manager soa -->
+						
+						
+						<!-- service soa -->
+						<value>{
+							"path":"/jd-sns-vip-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_servicesoa",
+							"fileType":"java","fileNameSuffix":"ServiceSoa","packageSuffix":"service.!mysoatag!"
+						}
+						</value>
+						
+						<value>{
+							"path":"/jd-sns-vip-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"template_serviceImplsoa",
+							"fileType":"java","fileNameSuffix":"ServiceSoaImpl","packageSuffix":"service.!mysoatag!.impl"
+						}
+						</value>
+						
+						<!-- service soa -->
+						
+
+					</list>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+					
+</beans>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.platform.generator" />
+
+	<bean id="generatorConfigList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="generatorConfig" />
+				<!-- <ref bean="generatorConfig1"/> D:/sts-bundle/platform/platform-admin-->
+			</list>
+		</constructor-arg>
+	</bean>
+	
+<!-- 	D:/springsource/workspace_work/platform-permit
+	D:/springsource2/workspace/plat/platform-permit
+	E:/sts/workspace/platform/platform-permit
+	D:/sts-bundle/workspace_mda/platform-base 
+	D:/sts-bundle/platform/platform-admin/
+	-->
+	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
+		<property name="basePath" value="D:/sts-bundle/workspace_New/imfbp-crm-20160929/" />
+		<property name="tableNames" value="crm_contacts"></property>
+		<property name="dbName" value="crm"></property>
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="generatorBeanMap">
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="generatorBean" value-ref="generatorBean"></entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="typeConver" class="com.platform.generator.interfaces.impl.DefaultTypeConver"></bean>
+
+	<bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
+		<property name="packageName" value="com.imfbp.crm" />
+		<property name="configList">
+			<bean class="java.util.ArrayList">
+				<constructor-arg>
+					<list>
+						
+						<!-- domain -->
+						<value>{
+							"path":"/imfbp-crm-domain/src/main/java/",
+							"parentClassName":"",
+							"parentPackageName":"",
+							"templateName":"module/template_model",
+							"fileType":"java","fileNameSuffix":"","packageSuffix":"domain.!allLowerTName!"}
+						</value>
+						<!-- domain -->
+						
+						<!-- query -->
+						<value>{
+							"path":"/imfbp-crm-domain/src/main/java/",
+							"parentClassName":"BaseQuery","parentPackageName":"com.platform.common.utils.query",
+							"templateName":"module/template_query",
+							"fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
+						}
+						</value>
+						<!-- query -->
+						
+						<!-- mapping -->
+						<value>{
+							"path":"/imfbp-crm-dao/src/main/resources/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"dao/template_sqlmap","fileType":"xml",
+							"fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"
+							}
+						</value>
+						<!-- mapping -->
+						
+						<!-- dao -->
+						<value>{
+							"path":"/imfbp-crm-dao/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"dao/template_dao",
+							"fileType":"java","fileNameSuffix":"Dao","packageSuffix":"dao.!allLowerTName!"
+						}
+						</value>
+						
+						<value>{
+							"path":"/imfbp-crm-dao/src/main/java/",
+							"parentClassName":"SqlSessionDaoSupport","parentPackageName":"org.mybatis.spring.support",
+							"templateName":"dao/template_daoImpl",
+							"fileType":"java","fileNameSuffix":"DaoImpl","packageSuffix":"dao.!allLowerTName!.impl"
+						}
+						</value>
+						<!-- dao -->
+						
+						<!-- service -->
+						<value>{
+							"path":"/imfbp-crm-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"service/template_service",
+							"fileType":"java","fileNameSuffix":"Service","packageSuffix":"service.!myadmintag!"
+						}
+						</value>
+						
+						<value>{
+							"path":"/imfbp-crm-service/src/main/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"service/template_serviceImpl",
+							"fileType":"java","fileNameSuffix":"ServiceImpl","packageSuffix":"service.!myadmintag!.impl"
+						}
+						</value>
+						
+						<value>{
+							"path":"/imfbp-crm-service/src/test/java/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"service/template_serviceImplTest",
+							"fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
+						}
+						</value>
+						<!-- service end -->
+						
+						<!-- controller start-->
+						<value>{
+							"path":"/imfbp-crm-web/src/main/java/",
+							"parentClassName":"BaseController","parentPackageName":"com.platform.common.spring.mvc.controller",
+							"templateName":"controller/template_controller",
+							"fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"
+						}
+						</value>
+						<!-- controller end -->
+						
+						
+						<!-- main page -->
+						<value>{
+							"path":"/imfbp-crm-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_page",
+							"fileType":"vm","fileNameSuffix":"","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<!-- main page -->
+						
+						<!-- list page -->
+						<value>{
+							"path":"/imfbp-crm-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_list_page",
+							"fileType":"vm","fileNameSuffix":"List","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<!-- list page -->
+						
+						<!-- edit page -->
+						<value>{
+							"path":"/imfbp-crm-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_edit_page",
+							"fileType":"vm","fileNameSuffix":"Edit","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<!-- edit page -->
+						
+						<!-- edit page -->
+						<value>{
+							"path":"/imfbp-crm-web/src/main/webapp/",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"page/template_list_serach_page",
+							"fileType":"vm","fileNameSuffix":"Search","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<!-- edit page -->
+						
+						<!-- config -->
+						<value>{
+							"path":"/config",
+							"parentClassName":"","parentPackageName":"",
+							"templateName":"config",
+							"fileType":"xml","fileNameSuffix":"","packageSuffix":"!myadmintag!"
+						}
+						</value>
+						<!-- config -->
+						
+					</list>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
