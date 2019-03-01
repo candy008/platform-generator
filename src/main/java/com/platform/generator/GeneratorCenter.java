@@ -1,7 +1,11 @@
 package com.platform.generator;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -74,15 +78,11 @@ public class GeneratorCenter {
 	}
 	
 	public static void main(String[] args) {
+
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 		GeneratorCenter center = (GeneratorCenter)context.getBean("generatorCenter");
 		center.generatorRun();
-//		Map<String, String> map = new HashMap<String, String>();
-//		map.put("a", null);
-//		map.put("a", "bbbbb");
-//		map.put("a", "bbbbb");
-//		System.out.println(map.size());
-		
+
 	}
 
 }

@@ -1,91 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
          http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context-3.0.xsd"
-	default-autowire="byName" default-lazy-init="false">
+       default-autowire="byName" default-lazy-init="false">
 
 
-	<context:annotation-config />
-	<context:component-scan base-package="com.platform.generator" />
+    <context:annotation-config/>
+    <context:component-scan base-package="com.platform.generator"/>
 
-	<bean id="generatorConfigList" class="java.util.ArrayList">
-		<constructor-arg>
-			<list>
-				<ref bean="generatorConfig" />
-				<!-- <ref bean="generatorConfig1"/> D:/sts-bundle/platform/platform-admin-->
-			</list>
-		</constructor-arg>
-	</bean>
-	
-<!-- 	D:/springsource/workspace_work/platform-permit
-	D:/springsource2/workspace/plat/platform-permit
-	E:/sts/workspace/platform/platform-permit
-	D:/sts-bundle/workspace_mda/platform-base 
-	D:/sts-bundle/platform/platform-admin/
-	-->
-	<bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
-		
-		<property name="dbName" value="${wangxiao.dbName}"></property>
-	 	<property name="tableNames" value="${wangxiao.tableNames}"></property>
-		<property name="basePath" value="${wangxiao.exportPath}" />
-		<property name="freemakerTemplatePath" value="${wangxiao.freemakerTemplatePath}" />
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="generatorBeanMap">
-			<bean class="java.util.HashMap">
-				<constructor-arg>
-					<map>
-						<entry key="generatorBean" value-ref="generatorBean"></entry>
-					</map>
-				</constructor-arg> 
-			</bean>
-		</property>
-	</bean>
-	
-	<bean id="typeConver" class="com.platform.generator.interfaces.impl.DefaultTypeConver"></bean>
+    <bean id="generatorConfigList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="generatorConfig"/>
+                <!-- <ref bean="generatorConfig1"/> D:/sts-bundle/platform/platform-admin-->
+            </list>
+        </constructor-arg>
+    </bean>
 
-	<bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
-		<property name="packageName" value="${wangxiao.packageName}" /> 
-		<property name="configList">
-			<bean class="java.util.ArrayList">
-				<constructor-arg>
-					<list>
-						<!-- domain -->
-						<value>{
-							"path":"/imfbp-istorewares-domain/src/main/java/",
-							"parentClassName":"",
-							"parentPackageName":"",
-							"templateName":"module/template_model",
-							"fileType":"java","fileNameSuffix":"","packageSuffix":"domain.!allLowerTName!"}
-						</value>
-						<!-- domain -->
-						
-						<!-- query -->
-						<value>{
-							"path":"/imfbp-istorewares-domain/src/main/java/",
-							"parentClassName":"BaseQuery","parentPackageName":"com.imfbp.boot.common.utils.query",
-							"templateName":"module/template_query",
-							"fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
-						}
-						</value>
-						<!-- query -->
-						
-						<!-- mapping -->
-						<value>{
-							"path":"/imfbp-istorewares-dao/src/main/resources/",
-							"parentClassName":"","parentPackageName":"",
-							"templateName":"dao/template_sqlmap","fileType":"xml",
-							"fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"
-							}
-						</value>
-						<!-- mapping -->
+    <!-- 	D:/springsource/workspace_work/platform-permit
+        D:/springsource2/workspace/plat/platform-permit
+        E:/sts/workspace/platform/platform-permit
+        D:/sts-bundle/workspace_mda/platform-base
+        D:/sts-bundle/platform/platform-admin/
+        -->
+    <bean id="generatorConfig" class="com.platform.generator.config.GeneratorConfig">
 
-					</list>
-				</constructor-arg>
-			</bean>
-		</property>
-	</bean>
+        <property name="dbName" value="${wangxiao.dbName}"></property>
+        <property name="tableNames" value="${wangxiao.tableNames}"></property>
+        <property name="basePath" value="${wangxiao.exportPath}"/>
+        <property name="freemakerTemplatePath" value="${wangxiao.freemakerTemplatePath}"/>
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="generatorBeanMap">
+            <bean class="java.util.HashMap">
+                <constructor-arg>
+                    <map>
+                        <entry key="generatorBean" value-ref="generatorBean"></entry>
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="typeConver" class="com.platform.generator.interfaces.impl.DefaultTypeConver"></bean>
+
+    <bean id="generatorBean" class="com.platform.generator.bean.GeneratorBean">
+        <property name="packageName" value="${wangxiao.packageName}"/>
+        <property name="configList">
+            <bean class="java.util.ArrayList">
+                <constructor-arg>
+                    <list>
+                        <!-- domain -->
+                        <value>{
+                            "path":"/imfbp-istoreorder-domain/src/main/java/",
+                            "parentClassName":"",
+                            "parentPackageName":"",
+                            "templateName":"module/template_model",
+                            "fileType":"java","fileNameSuffix":"","packageSuffix":"domain.!allLowerTName!"}
+                        </value>
+                        <!-- domain -->
+
+                        <!-- query -->
+                        <value>{
+                            "path":"/imfbp-istoreorder-domain/src/main/java/",
+                            "parentClassName":"BaseQuery","parentPackageName":"com.imfbp.boot.common.utils.query",
+                            "templateName":"module/template_query",
+                            "fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
+                            }
+                        </value>
+                        <!-- query -->
+
+                        <!-- mapping -->
+                        <value>{
+                            "path":"/imfbp-istoreorder-dao/src/main/resources/",
+                            "parentClassName":"","parentPackageName":"",
+                            "templateName":"dao/template_sqlmap","fileType":"xml",
+                            "fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"
+                            }
+                        </value>
+                        <!-- mapping -->
+
+
+                    </list>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
 
 </beans>

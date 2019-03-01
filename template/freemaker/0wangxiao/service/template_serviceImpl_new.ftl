@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.commons.utils.DateUtil;
+import com.commons.util.DateUtil;
 import com.imfbp.boot.common.utils.page.PaginatedList;
 import com.imfbp.boot.common.utils.page.impl.MysqlPaginatedArrayList;
 import com.imfbp.boot.common.web.result.GridResult;

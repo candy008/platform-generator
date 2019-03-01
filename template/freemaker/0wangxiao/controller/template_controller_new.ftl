@@ -28,7 +28,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 *  查询所有
-	 * @param mktsetlistQuery
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -45,7 +45,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 * 分页查询
-	 * @param mktsetlistQuery
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -62,7 +62,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 * 根据id查询
-	 * @param mktsetlistQuery
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -76,7 +76,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 *  添加或修改
-	 * @param mktsetlist
+	 * @param ${tb.fLowerTName}
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -90,7 +90,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 
 	/**
 	 *  根据Id批量删除 (真正删除数据库数据)
-	 * @param batchId
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context
@@ -104,7 +104,7 @@ public class ${tb.fUpperTName}Controller extends BaseController{
 	
 	/**
 	 * 根据Id批量逻辑删除(修改数据库数据为删除状态)
-	 * @param batchId
+	 * @param ${tb.fLowerTName}Query
 	 * @param req
 	 * @param resp
 	 * @param context

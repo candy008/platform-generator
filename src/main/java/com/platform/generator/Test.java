@@ -9,7 +9,7 @@
 //public static void main(String[] args){
 //	convertEntry(new VipClubGiftPackage(),new VipClubGiftPackage());
 //}
-//	
+//
 //	public static void convertEntry(Object srcObject, Object descObject) {
 //		try {
 //			Class<?>[] getParameterType = new Class[] {};
@@ -40,7 +40,7 @@
 //			e.printStackTrace(pw);
 //		}
 //	}
-//	
+//
 ////	public  static String headUpper(String s){
 ////		if(a.getId(id).equals(b.getId(id)))
 ////			if(a.getName(name).equals(b.getName(name)))
