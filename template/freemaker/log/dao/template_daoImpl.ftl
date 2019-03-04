@@ -16,6 +16,7 @@ import ${cfb.parentPackageName}.${cfb.parentClassName};
 	</#if>
 </#if>
 
+
 @Component("wBrandDao")
 public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}Dao{
 
