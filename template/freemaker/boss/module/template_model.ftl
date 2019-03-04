@@ -1,5 +1,8 @@
 package ${cfb.packageName}.${cfb.packageSuffix};
 
+import java.util.List;
+import java.util.Map;
+import org.mybatis.spring.SqlSessionTemplate;
 <#list tb.packageMap?keys as key> 
 import ${tb.packageMap[key]};
 </#list>

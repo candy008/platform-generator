@@ -122,7 +122,7 @@
 
                         <value>{
                             "path":"/imfbp-log-dao/src/main/java/",
-                            "parentClassName":"SqlSessionDaoSupport","parentPackageName":"org.mybatis.spring.support",
+                            "parentClassName":"SqlSessionTemplate","parentPackageName":"org.mybatis.spring",
                             "templateName":"dao/template_daoImpl",
                             "fileType":"java","fileNameSuffix":"DaoImpl","packageSuffix":"dao.!allLowerTName!.impl"
                             }
