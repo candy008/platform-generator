@@ -146,13 +146,7 @@
                             }
                         </value>
 
-                        <value>{
-                            "path":"/imfbp-log-service/src/test/java/",
-                            "parentClassName":"","parentPackageName":"",
-                            "templateName":"service/template_serviceImplTest",
-                            "fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
-                            }
-                        </value>
+
                         <!-- service end -->
 
                         <!-- controller start-->
@@ -168,6 +162,13 @@
                             "parentClassName":"BaseController","parentPackageName":"com.platform.common.spring.mvc.controller",
                             "templateName":"controller/template_controller_new",
                             "fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"
+                            }
+                        </value>
+                        <value>{
+                            "path":"/imfbp-log-web/src/test/java/",
+                            "parentClassName":"","parentPackageName":"",
+                            "templateName":"service/template_serviceImplTest",
+                            "fileType":"java","fileNameSuffix":"ServiceTest","packageSuffix":"service.!myadmintag!.impl"
                             }
                         </value>
                         <!-- controller end -->

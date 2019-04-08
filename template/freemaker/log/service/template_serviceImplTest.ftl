@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.platform.common.utils.page.PaginatedList;
@@ -24,8 +25,8 @@ import ${cfb.packageName}.service.${mytagprizepackage}.${tb.fUpperTName}Service;
 import ${cfb.packageName}.dao.${mytagprizepackage}.${tb.fUpperTName}Dao;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:spring-config.xml")
+@RunWith(SpringJUnit4ClassRunner.class) // SpringJUnit支持，由此引入Spring-Test框架支持！
+@SpringBootTest(classes={LogApplication.class})
 public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 
 	@Autowired

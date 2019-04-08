@@ -55,7 +55,7 @@
                     <list>
                         <!-- domain -->
                         <value>{
-                            "path":"/ifbp-log-domain/src/main/java/",
+                            "path":"/imfbp-log-domain/src/main/java/",
                             "parentClassName":"",
                             "parentPackageName":"",
                             "templateName":"module/template_model",
@@ -65,7 +65,7 @@
 
                         <!-- domain extend -->
                         <value>{
-                            "path":"/ifbp-log-domain/src/main/java/",
+                            "path":"/imfbp-log-domain/src/main/java/",
                             "parentClassName":"",
                             "parentPackageName":"",
                             "templateName":"module/template_model_extend",
@@ -75,31 +75,31 @@
 
                         <!-- query -->
                         <value>{
-                            "path":"/ifbp-log-domain/src/main/java/",
+                            "path":"/imfbp-log-domain/src/main/java/",
                             "parentClassName":"BaseQuery","parentPackageName":"com.platform.common.utils.query",
                             "templateName":"module/template_query",
                             "fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
                             }
                         </value>
-                        <value>{
-                            "path":"/ifbp-log-domain/src/main/java/",
-                            "parentClassName":"",
-                            "parentPackageName":"",
-                            "templateName":"module/template_query_extend",
-                            "fileType":"java","fileNameSuffix":"QueryExtend","packageSuffix":"domain.!allLowerTName!"}
-                        </value>
+                        <!--<value>{-->
+                            <!--"path":"/imfbp-log-domain/src/main/java/",-->
+                            <!--"parentClassName":"",-->
+                            <!--"parentPackageName":"",-->
+                            <!--"templateName":"module/template_query_extend",-->
+                            <!--"fileType":"java","fileNameSuffix":"QueryExtend","packageSuffix":"domain.!allLowerTName!"}-->
+                        <!--</value>-->
                         <!-- query -->
 
                         <!-- mapping -->
+                        <!--<value>{-->
+                            <!--"path":"/imfbp-log-dao/src/main/resources/",-->
+                            <!--"parentClassName":"","parentPackageName":"",-->
+                            <!--"templateName":"dao/template_sqlmap_extend","fileType":"xml",-->
+                            <!--"fileNameSuffix":"MapperExtend","packageSuffix":"sqlmap.!allLowerTName!"-->
+                            <!--}-->
+                        <!--</value>-->
                         <value>{
-                            "path":"/ifbp-log-dao/src/main/resources/",
-                            "parentClassName":"","parentPackageName":"",
-                            "templateName":"dao/template_sqlmap_extend","fileType":"xml",
-                            "fileNameSuffix":"MapperExtend","packageSuffix":"sqlmap.!allLowerTName!"
-                            }
-                        </value>
-                        <value>{
-                            "path":"/ifbp-log-dao/src/main/resources/",
+                            "path":"/imfbp-log-dao/src/main/resources/",
                             "parentClassName":"","parentPackageName":"",
                             "templateName":"dao/template_sqlmap","fileType":"xml",
                             "fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"

@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Resource;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import org.apache.commons.lang3.time.DateFormatUtils;
@@ -17,19 +19,15 @@ import ${cfb.packageName}.domain.${mytagprizepackage1}.query.${tb.fUpperTName}Qu
 import ${cfb.packageName}.dao.${mytagprizepackage}.${tb.fUpperTName}Dao;
 import ${cfb.packageName}.service.${mytagprizepackage}.${tb.fUpperTName}Service;
 
-
 @Component("${tb.fLowerTName}Service")
 public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}Service{
-
-
 
 	@Resource(name = "primaryKeyUtil")
 	private PrimaryKeyUtil primaryKeyUtil;
 
-	@Resource(name = "wHotWaresDao")
+	@Resource(name = "${tb.fLowerTName}Dao")
 	private ${tb.fUpperTName}Dao ${tb.fLowerTName}Dao;
 
-	private PrimaryKeyUtil primaryKey;
 	/**
 	 * 添加
 	 * @param ${tb.fLowerTName}
@@ -38,7 +36,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	@Override
 	public void insert${tb.fUpperTName}(${tb.fUpperTName} ${tb.fLowerTName}){
 		String date = DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss");
-		String pk = primaryKey.getPrimaryKey();
+		String pk = primaryKeyUtil.getPrimaryKey();
 		<#list tb.columns as item>
 			<#if (item.columnName)=="dr">
 				${tb.fLowerTName}.setDr(0);
@@ -77,7 +75,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 				${tb.fLowerTName}List.get(i).setTs(date);
 			    </#if>
 		    	</#list>
-				String pk = primaryKey.getPrimaryKey();
+				String pk = primaryKeyUtil.getPrimaryKey();
 				${tb.fLowerTName}List.get(i).set${tb.tableKey[0].fUpperkey}(pk);
 			}
 			${tb.fLowerTName}Dao.insertBatch${tb.fUpperTName}(${tb.fLowerTName}List);

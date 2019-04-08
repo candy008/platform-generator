@@ -1,4 +1,4 @@
-template_daoImpl.ftlpackage ${cfb.packageName}.${cfb.packageSuffix};
+package ${cfb.packageName}.${cfb.packageSuffix};
 
 import java.util.List;
 

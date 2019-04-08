@@ -15,7 +15,7 @@
 	<!-- <import resource="spring/spring-config-generator-springmvc_rz.xml" /> -->
 	<!-- <import resource="spring/spring-config-generator-springmvc_bj.xml" /> -->
 	<!--<import resource="spring/wangxiao/spring-config-generator-wares-page.xml" />-->
-	<import resource="spring/log/spring-config-generator-all.xml" />
+	<import resource="spring/boss/spring-config-generator-boss.xml" />
 	<import resource="spring/spring-config-datasource.xml" />
 
 </beans>

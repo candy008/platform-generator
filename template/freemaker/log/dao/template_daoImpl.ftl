@@ -17,7 +17,7 @@ import ${cfb.parentPackageName}.${cfb.parentClassName};
 </#if>
 
 
-@Component("wBrandDao")
+@Component("${tb.fLowerTName}Dao")
 public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}Dao{
 
 	@Resource(name="sqlSessionTemplate")
