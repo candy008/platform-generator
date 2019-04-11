@@ -156,13 +156,13 @@
                         <!-- service end -->
 
                         <!-- controller start-->
-                        <value>{
-                            "path":"/ifbp-boss-admin/src/main/java/",
-                            "parentClassName":"BaseController","parentPackageName":"com.platform.common.spring.mvc.controller",
-                            "templateName":"controller/template_controller_new",
-                            "fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"
-                            }
-                        </value>
+                        <!--<value>{-->
+                            <!--"path":"/ifbp-boss-admin/src/main/java/",-->
+                            <!--"parentClassName":"BaseController","parentPackageName":"com.platform.common.spring.mvc.controller",-->
+                            <!--"templateName":"controller/template_controller_new",-->
+                            <!--"fileType":"java","fileNameSuffix":"Controller","packageSuffix":"controller.!myadmintag!"-->
+                            <!--}-->
+                        <!--</value>-->
                         <value>{
                             "path":"/ifbp-boss-web/src/main/java/",
                             "parentClassName":"BaseController","parentPackageName":"com.platform.common.spring.mvc.controller",

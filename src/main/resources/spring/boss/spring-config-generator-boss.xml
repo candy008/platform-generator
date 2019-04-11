@@ -63,15 +63,15 @@
                         </value>
                         <!-- domain -->
 
-                        <!-- domain extend -->
-                        <value>{
-                            "path":"/ifbp-boss-domain/src/main/java/",
-                            "parentClassName":"",
-                            "parentPackageName":"",
-                            "templateName":"module/template_model_extend",
-                            "fileType":"java","fileNameSuffix":"Extend","packageSuffix":"domain.!allLowerTName!"}
-                        </value>
-                        <!-- domain extend -->
+                        <!--&lt;!&ndash; domain extend &ndash;&gt;-->
+                        <!--<value>{-->
+                            <!--"path":"/ifbp-boss-domain/src/main/java/",-->
+                            <!--"parentClassName":"",-->
+                            <!--"parentPackageName":"",-->
+                            <!--"templateName":"module/template_model_extend",-->
+                            <!--"fileType":"java","fileNameSuffix":"Extend","packageSuffix":"domain.!allLowerTName!"}-->
+                        <!--</value>-->
+                        <!--&lt;!&ndash; domain extend &ndash;&gt;-->
 
                         <!-- query -->
                         <value>{
@@ -86,18 +86,18 @@
                             "parentClassName":"",
                             "parentPackageName":"",
                             "templateName":"module/template_query_extend",
-                            "fileType":"java","fileNameSuffix":"QueryExtend","packageSuffix":"domain.!allLowerTName!"}
+                            "fileType":"java","fileNameSuffix":"QueryExtend","packageSuffix":"domain.!allLowerTName!.query"}
                         </value>
                         <!-- query -->
 
                         <!-- mapping -->
-                        <value>{
-                            "path":"/ifbp-boss-dao/src/main/resources/",
-                            "parentClassName":"","parentPackageName":"",
-                            "templateName":"dao/template_sqlmap_extend","fileType":"xml",
-                            "fileNameSuffix":"MapperExtend","packageSuffix":"sqlmap.!allLowerTName!"
-                            }
-                        </value>
+                        <!--<value>{-->
+                            <!--"path":"/ifbp-boss-dao/src/main/resources/",-->
+                            <!--"parentClassName":"","parentPackageName":"",-->
+                            <!--"templateName":"dao/template_sqlmap_extend","fileType":"xml",-->
+                            <!--"fileNameSuffix":"MapperExtend","packageSuffix":"sqlmap.!allLowerTName!"-->
+                            <!--}-->
+                        <!--</value>-->
                         <value>{
                             "path":"/ifbp-boss-dao/src/main/resources/",
                             "parentClassName":"","parentPackageName":"",
