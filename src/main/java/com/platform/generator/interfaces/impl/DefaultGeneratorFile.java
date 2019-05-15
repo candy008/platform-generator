@@ -165,9 +165,10 @@ public class DefaultGeneratorFile implements GeneratorFile {
                     dataMap.put("cfb", generatorBean);
                     dataMap.put("cf", generatorConfig);
                     dataMap.put("myTag", myTag);
-
+//                    generatorTable.getChildTable().get(0);
                     dataMap.put("mytagprizepackage", mypackageTag);
                     dataMap.put("mytagprizepackage1", myTag.get("!allLowerTName!"));
+                    dataMap.put("child",generatorTable.childTable);
 //					dataMap.put("LowerAllkeyTag","matkey");
 //					dataMap.put("upperAllkeyTag","MATKEY");
 //					dataMap.put("fUkeyTag","matkey");

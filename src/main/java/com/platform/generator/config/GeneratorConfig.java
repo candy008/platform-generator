@@ -11,71 +11,76 @@ import com.platform.generator.bean.GeneratorBean;
 @Component("generatorConfig")
 public class GeneratorConfig {
 
-	private String basePath;
-	
-	private ComboPooledDataSource dataSource; 
-	
-	private Map<String, GeneratorBean> generatorBeanMap;
-	
-	private String tableNames;
-	
-	private String dbName;
-	
-	private String freemakerTemplatePath;
-	
-	public String getBasePath() {
-		return basePath;
-	}
+    private String basePath;
 
-	public void setBasePath(String basePath) {
-		this.basePath = basePath;
-	}
+    private ComboPooledDataSource dataSource;
 
-	public ComboPooledDataSource getDataSource() {
-		return dataSource;
-	}
+    private Map<String, GeneratorBean> generatorBeanMap;
 
-	public void setDataSource(ComboPooledDataSource dataSource) {
-		this.dataSource = dataSource;
-	}
+    private String tableNames;
 
+    private String dbName;
 
+    private String freemakerTemplatePath;
 
-	public Map<String, GeneratorBean> getGeneratorBeanMap() {
-		return generatorBeanMap;
-	}
+    /**
+     * 是否有字表
+     */
+    private boolean childTable;
 
+    public String getBasePath() {
+        return basePath;
+    }
 
+    public void setBasePath(String basePath) {
+        this.basePath = basePath;
+    }
 
-	public void setGeneratorBeanMap(Map<String, GeneratorBean> generatorBeanMap) {
-		this.generatorBeanMap = generatorBeanMap;
-	}
+    public ComboPooledDataSource getDataSource() {
+        return dataSource;
+    }
 
-	public String getTableNames() {
-		return tableNames;
-	}
+    public void setDataSource(ComboPooledDataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
-	public void setTableNames(String tableNames) {
-		this.tableNames = tableNames;
-	}
+    public Map<String, GeneratorBean> getGeneratorBeanMap() {
+        return generatorBeanMap;
+    }
 
-	public String getDbName() {
-		return dbName;
-	}
+    public void setGeneratorBeanMap(Map<String, GeneratorBean> generatorBeanMap) {
+        this.generatorBeanMap = generatorBeanMap;
+    }
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-	}
+    public String getTableNames() {
+        return tableNames;
+    }
 
-	public String getFreemakerTemplatePath() {
-		return freemakerTemplatePath;
-	}
+    public void setTableNames(String tableNames) {
+        this.tableNames = tableNames;
+    }
 
-	public void setFreemakerTemplatePath(String freemakerTemplatePath) {
-		this.freemakerTemplatePath = freemakerTemplatePath;
-	}
+    public String getDbName() {
+        return dbName;
+    }
 
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
 
+    public String getFreemakerTemplatePath() {
+        return freemakerTemplatePath;
+    }
 
-	
+    public void setFreemakerTemplatePath(String freemakerTemplatePath) {
+        this.freemakerTemplatePath = freemakerTemplatePath;
+    }
+
+    public boolean isChildTable() {
+        return childTable;
+    }
+
+    public void setChildTable(boolean childTable) {
+        this.childTable = childTable;
+    }
 }

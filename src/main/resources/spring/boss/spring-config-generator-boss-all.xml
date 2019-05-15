@@ -31,6 +31,7 @@
 
         <property name="dbName" value="${wangxiao.dbName}"></property>
         <property name="tableNames" value="${wangxiao.tableNames}"></property>
+        <property name="childTable" value="${wangxiao.child}"></property>
         <property name="basePath" value="${wangxiao.exportPath}"/>
         <property name="freemakerTemplatePath" value="${wangxiao.freemakerTemplatePath}"/>
         <property name="dataSource" ref="dataSource"></property>

@@ -26,9 +26,22 @@ public class GeneratorTable {
 	public static final String TABLE_TYPE = "TABLE_TYPE";
 	public static final String REMARKS = "REMARKS";
 	public static final String DEF_TABLE_NAMEPATTERN = "%";
+
+	/**
+	 * 字表
+	 */
+	public List<GeneratorTable> childTable;
 	
 	private List<GeneratorTableKey> tableKey;
-	
+
+	public List<GeneratorTable> getChildTable() {
+		return childTable;
+	}
+
+	public void setChildTable(List<GeneratorTable> childTable) {
+		this.childTable = childTable;
+	}
+
 	private String tableCat;
 	
 	private String tableSchem;

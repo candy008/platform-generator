@@ -40,7 +40,8 @@ public class GeneratorCenter {
 //	public final static String TEMPPLATE_PATH = "D:/springsource2/workspace/club_vip/wplatform-generator/template/permit";
 //	public final static String TEMPPLATE_PATH = "E:/sts/workspace/platform/wplatform-generator/template/permit";
 	private GeneratorDao generatorDao;
-	
+
+
 	public void generatorRun(){
 //		URL templatePath = this.getClass().getClassLoader().getResource("freemaker/bawie/");
 //		System.out.println(templatePath);
@@ -48,8 +49,16 @@ public class GeneratorCenter {
 		GeneratorFile generatorFile = new DefaultGeneratorFile();
 		List<GeneratorTable> generatorTableList = null;
 		for (GeneratorConfig generatorConfig:generatorConfigList) {
+
 			String tableNameStr = generatorConfig.getTableNames();
-			String[] tableNames = tableNameStr.split(",");
+
+			String[] tableNames = null;
+			if(generatorConfig.isChildTable()){
+				tableNames = tableNameStr.split("\\|");
+			}else{
+				tableNames = tableNameStr.split(",");
+			}
+
 			for (int i = 0; i < tableNames.length; i++) {
 				generatorTableList = generatorDao.getGeneratorData(tableNames[i],generatorConfig,typeConver);
 				if(generatorTableList!=null&&generatorTableList.size()>0){
