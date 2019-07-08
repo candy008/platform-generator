@@ -31,6 +31,7 @@
 <script>
 	//获取公用提交，删除接口
 	import api from "@/assets/js/api"
+	import qs from "qs"
 	/*
 	 @props {formData} 动态地保定父组件地formData值，当父组件改变该数据时，编辑页可以动态地更新数据
 	 * */
@@ -48,11 +49,20 @@
 				cancel(){
 					this.$emit("hide")
 				},
+				/*重置表单*/
+				resetFields(){
+					this.$refs.form.resetFields();
+				},
 				/*
 				 	保存数据
 				 	调用保存数据的通用API，API说明参考api.js
 				 * */
 				saveData(){
+					let flag = false;
+					this.$refs.form.validate((valid) => {if (valid) {flag = true; } else {flag = false; } });
+					if(!flag){
+						return
+					}
 					var _this = this
 					api.saveData({
 						data(){

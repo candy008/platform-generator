@@ -132,9 +132,8 @@ public class DefaultGeneratorFile implements GeneratorFile {
                     String filename = generatorTable.getfUpperTName() + fileNameSuffix + "." + fileType;
 
                     String path = generatorBean.getPackageName().replace(".", "/");
-                    if (fileNameSuffix.contains("Mapper")) {
+                    if (fileNameSuffix.contains("Mapper")&&!fileType.contains("java")) {
                         path = "";
-                        filename = generatorTable.getfLowerTName() + fileNameSuffix + "." + fileType;
                     } else if (fileType.equals("vm")) {
                         path = "/WEB-INF/vm/";
                         filename = generatorTable.getfLowerTName() + fileNameSuffix + "." + fileType;
@@ -154,10 +153,26 @@ public class DefaultGeneratorFile implements GeneratorFile {
                     } else if (fileType.contains("json")) {
                         path = "";
                         filename = generatorTable.getfLowerTName() + fileNameSuffix + "." + fileType;
+                    }else if(fileType.contains("html")){
+                        path = "";
+                    }
+                    else if(fileType.contains("less")){
+                        path = "";
                     }
 
+                    if(jsonObject.containsKey("fileName")){
+                        filename = jsonObject.getString("fileName") + fileNameSuffix + "." + fileType;
+                    }
 
-                    String generatorFilePath = generatorConfig.getBasePath() + "/" + "/" + generatorBean.getPath() + "/" + path + "/" + packageSuffixPath + "/";
+                    String filePath = "";
+                    if(jsonObject.containsKey("filePath")){
+                        filePath = jsonObject.getString("filePath");
+                        filePath=filePath.replaceAll("!myadmintag!",myTag.get("!myadmintag!"));
+                    }
+
+                    //packageSuffixPath = generatorTable.getTableName().replaceAll("_","-");
+
+                    String generatorFilePath = generatorConfig.getBasePath() + "/" + "/" + generatorBean.getPath() + "/" + path + "/" + packageSuffixPath + "/"+filePath;
 
                     System.out.println(generatorFilePath);
 
@@ -174,7 +189,14 @@ public class DefaultGeneratorFile implements GeneratorFile {
 //					dataMap.put("fUkeyTag","matkey");
 //					dataMap.put("fLkeyTag","matkey");
 
+
                     generatorFile(generatorFilePath, filename, templateName, dataMap, generatorConfig);
+//
+//                    if(generatorTable.isChild()){
+//                        generatorFile(generatorFilePath, filename, templateName+"_child", dataMap, generatorConfig);
+//                    }else{
+//                        generatorFile(generatorFilePath, filename, templateName, dataMap, generatorConfig);
+//                    }
 
                 }
 
@@ -207,8 +229,8 @@ public class DefaultGeneratorFile implements GeneratorFile {
             String templatePath = "/";
             if (template.indexOf("/") > 0) {
                 templateNameArr = template.split("/");
-                templatePath = "/" + templateNameArr[0];
-                templateName = templateNameArr[1];
+                templatePath = "/" + template.substring(0,template.lastIndexOf("/")+1);
+                templateName = template.substring(template.lastIndexOf("/")+1,template.length());
             }
             //TODO fulq 取配置
             String freemakerTemplate = generatorConfig.getFreemakerTemplatePath();

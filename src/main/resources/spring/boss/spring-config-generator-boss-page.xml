@@ -91,6 +91,13 @@
                             "fileType":"json","fileNameSuffix":"Btn","packageSuffix":"!myadmintag!"
                             }
                         </value>
+                        <value>{
+                            "path":"/boss_web/data",
+                            "parentClassName":"","parentPackageName":"",
+                            "templateName":"page/template_btn_json_page",
+                            "fileType":"json","fileNameSuffix":"Btn","packageSuffix":"!myadmintag!"
+                            }
+                        </value>
 
                     </list>
                 </constructor-arg>

@@ -1,5 +1,5 @@
 <template>
-	<div class="trans">
+	<div class="trans ${tb.fLowerTName}">
 		<div class="transPage" v-show="pageState.active=='list'" >
 			
 			<div class="tools-panel">
@@ -8,7 +8,7 @@
 				<!-- 更多查询 start -->
 				<div class="tools-more" :class="{'hide-more':hideMore}">
 					<div>
-						<el-form :inline="true" :model="queryParams" class="demo-form-inline">
+						<el-form :inline="true" :model="queryParams" class="demo-form-inline" label-width="150px">
 							<#assign x=0 />
 							<#list tb.columns as item>
 								<el-form-item <#if (item.remarks)!="">label="${item.remarks}" <#else>label="${item.fLowerColName}"</#if> prop="${item.fLowerColName}">
@@ -31,7 +31,7 @@
 					
 					<!-- 查询 start -->
 					<div class="tools-search">
-						<el-form :inline="true" :model="queryParams" class="demo-form-inline">
+						<el-form :inline="true" :model="queryParams" class="demo-form-inline" label-width="150px">
 							<el-form-item>
 								<el-input v-model="queryParams.systemName" placeholder="请输入系统名称" icon="search" :on-icon-click="searchData"></el-input>
 							</el-form-item>
@@ -71,9 +71,9 @@
 			<!-- 表格 end -->
 		</div>
 		<!-- 编辑页 -->
-		<${tb.fLowerTName}-edit v-show="pageState.active=='edit'" class="transPage" :form-data="form" @hide="hidePage"></${tb.fLowerTName}-edit>
+		<${tb.fLowerTName}-edit v-show="pageState.active=='edit'" ref="edit" class="transPage" :form-data="form" @hide="hidePage"></${tb.fLowerTName}-edit>
 		<!-- 详情页 -->
-		<${tb.fLowerTName}-detail v-show="pageState.active=='detail'" class="transPage" :detail-info="form" @hide="hidePage"></${tb.fLowerTName}-detail>
+		<${tb.fLowerTName}-detail v-show="pageState.active=='detail'" ref="detail" class="transPage" :detail-info="form" @hide="hidePage"></${tb.fLowerTName}-detail>
 		
 	</div>
 </template>
@@ -85,10 +85,11 @@
 	 */
 	import ${tb.fLowerTName}Edit from "./${tb.fLowerTName}Edit.vue"
 	import ${tb.fLowerTName}Detail from "./${tb.fLowerTName}Detail.vue"
-	import editTable from "../../../components/table.vue"
-	import toolBtn from "../../../components/toolBtn.vue"
+	import editTable from "../../../common/components/table.vue"
+	import toolBtn from "../../../common/components/toolBtn.vue"
 	import api from "@/assets/js/api.js"
-	import ${tb.fLowerTName}Model from "@/assets/model/${tb.fLowerTName}/${tb.fLowerTName}Model.js"
+	import qs from "qs"
+	import ${tb.fLowerTName}Model from "../../../common/bj/${tb.fLowerTName}/${tb.fLowerTName}Model.js"
 	export default {
 		name: "${tb.fLowerTName}",
 		/**
@@ -146,6 +147,10 @@
 					this.queryParams[attr] = ""
 				}
 			},
+			/*置空编辑表单*/
+			resetForm(){
+				Object.assign(this.form,this.emptyForm)
+			},
 			/**
 			 * 查询表格数据
 			 */
@@ -165,6 +170,8 @@
 				this.hideMore = true;
 				//重置高级查询表单
 				this.resetSearch();
+				//重置编辑表单
+				this.resetForm();
 				//调用子组件的方法，重新加载表格数据
 				this.refresh();
 			},
@@ -188,6 +195,7 @@
 			 * 点击新增按钮的回调函数
 			 */
 			addData(btnName) {
+				this.$refs.edit.resetFields();
 				this.pageState.goNext("edit", btnName);
 				Object.assign(this.form, this.emptyForm);
 			},

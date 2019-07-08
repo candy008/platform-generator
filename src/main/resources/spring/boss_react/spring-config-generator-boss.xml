@@ -34,6 +34,7 @@
         <property name="basePath" value="${wangxiao.exportPath}"/>
         <property name="freemakerTemplatePath" value="${wangxiao.freemakerTemplatePath}"/>
         <property name="dataSource" ref="dataSource"></property>
+        <property name="childTable" value="false" ></property>
         <property name="generatorBeanMap">
             <bean class="java.util.HashMap">
                 <constructor-arg>

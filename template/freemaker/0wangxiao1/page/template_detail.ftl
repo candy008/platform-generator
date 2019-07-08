@@ -10,13 +10,11 @@
 			</#if>
 			<el-row>
 				</#if>
-				<el-col :span="12">
-					<div class="info-wrap">
-						<el-col :span="6"><span class="detail-title"><#if (item.remarks)!="">${item.remarks}<#else>${item.fLowerColName}</#if></span></el-col>
-						<el-col :span="2"><span>:</span></el-col>
-						<el-col :span="16"><span class="detail-info">{{detailInfo.${item.fLowerColName}}}</span></el-col>
-					</div>
-				</el-col>
+				<div class="info-wrap">
+					<el-col :span="6"><span class="detail-title"><#if (item.remarks)!="">${item.remarks}<#else>${item.fLowerColName}</#if></span></el-col>
+					<el-col :span="2"><span>:</span></el-col>
+					<el-col :span="16"><span class="detail-info">{{detailInfo.${item.fLowerColName}}}</span></el-col>
+				</div>
 				<#assign x=x+1 />
 			</#list>
 			</el-row>
