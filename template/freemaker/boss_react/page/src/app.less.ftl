@@ -1,26 +1,28 @@
-/**
-* 整个应用的入口，包含路由，数据管理加载
-*/
-
-import React from "react";
-import 'core-js/es6/map';
-import 'core-js/es6/set';
-import mirror, {render, Router} from "mirrorx";
-import Routes from './routes'
-
-import 'tinper-bee/assets/tinper-bee.css'
-import "./app.less"
-
-
-const MiddlewareConfig = [];
-
-
-mirror.defaults({
-historyMode: "hash",
-middlewares: MiddlewareConfig
-});
-
-
-render(<Router>
-    <Routes/>
-</Router>, document.querySelector("#app"));
+@import "~styles/app";
+  .creditTermForm,.creditTermForm-search{
+    .u-input-group{
+      display: inline-block;
+       width: 60%;
+       height: 30px;
+       .u-input-group-btn{
+         position: absolute;
+         right: 1px;
+         width: 50px;
+         top: 1px;
+         height: 30px;
+         .u-select{
+           width: 100%;
+           border: none;
+           .u-select-selection{
+              border: none;
+              height: 30px;
+           }
+         }
+      }
+    }
+  }
+  .creditTermForm-search{
+    .u-input-group{
+       width: 100%;
+    }
+  }

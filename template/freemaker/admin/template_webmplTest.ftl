@@ -40,13 +40,13 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 		</#if>
 		</#list>
 	
-		${tb.fLowerTName}Service.insert${tb.fUpperTName}(${tb.fLowerTName});	
+		${tb.fLowerTName}Service.insert${tb.fUpperTName}(${tb.fLowerTName});
 	}
 	
 	@Test
 	public void delete${tb.fUpperTName}ById(){
 		${tb.fUpperTName} ${tb.fLowerTName} = new ${tb.fUpperTName}();
-		${tb.fLowerTName}Service.delete${tb.fUpperTName}ById(${tb.fLowerTName});	
+		${tb.fLowerTName}Service.delete${tb.fUpperTName}ById(${tb.fLowerTName});
 	}
 	
 	@Test

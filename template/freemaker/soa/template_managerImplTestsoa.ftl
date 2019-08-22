@@ -29,14 +29,14 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	public void insert${tb.fUpperTName}(){
 		${tb.fUpperTName} ${tb.fLowerTName} = new ${tb.fUpperTName}();
 		//testInsert
-		${tb.fLowerTName}Dao.insert${tb.fUpperTName}(${tb.fLowerTName});	
+		${tb.fLowerTName}Dao.insert${tb.fUpperTName}(${tb.fLowerTName});
 	}
 	
 	@Test
 	public void delete${tb.fUpperTName}ById(){
 		${tb.fUpperTName} ${tb.fLowerTName} = new ${tb.fUpperTName}();
 		//testDelete
-		${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(${tb.fLowerTName});	
+		${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(${tb.fLowerTName});
 	}
 	
 	@Test

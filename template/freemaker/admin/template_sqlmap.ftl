@@ -79,7 +79,7 @@
     <!-- 新增 -->
 	<insert id="insert${tb.fUpperTName}" parameterType="${tb.fLowerTName}">
 		insert into ${tb.tableName}
-			(<#list tb.columns as item><#assign x=0 /><#if tb.tableKey?size gt 0 ><#list tb.tableKey as items><#if items.fUpperkey != item.columnName><#assign x=1 /></#if></#list><#else><#assign x=1 /></#if><#if x==1>${item.columnName}<#if item_has_next>,</#if></#if></#list> ) 
+			(<#list tb.columns as item><#assign x=0 /><#if tb.tableKey?size gt 0 ><#list tb.tableKey as items><#if items.fUpperkey != item.columnName><#assign x=1 /></#if></#list><#else><#assign x=1 /></#if><#if x==1>${item.columnName}<#if item_has_next>,</#if></#if></#list> )
 		values 
 			(<#list tb.columns as item><#assign x=0 /><#if tb.tableKey?size gt 0><#list tb.tableKey as items><#if items.keyStr != item.fLowerColName><#assign x=1 /></#if></#list><#else><#assign x=1 /></#if><#if x==1>#${"{${item.fLowerColName},jdbcType=${item.jdbcType}}"}<#if item_has_next>,</#if></#if></#list>)
     </insert>
@@ -93,12 +93,12 @@
     <delete id="delete${tb.fUpperTName}ByCondition" parameterType="${tb.fLowerTName}Query" >
     	delete 
     	from 
-    	${tb.tableName}<include refid="condition" /> 
+    	${tb.tableName}<include refid="condition" />
     </delete>
     
     <!-- 根据id修改 -->
     <update id="update${tb.fUpperTName}ById" parameterType="java.lang.Long">
-		update  ${tb.tableName} 
+		update  ${tb.tableName}
 		<set>
 <#list tb.columns as item>
 	<#assign x=0 />
@@ -134,7 +134,7 @@
     
      <!-- 根据条件修改 -->
     <update id="update${tb.fUpperTName}ByCondition" parameterType="map">
-		update  ${tb.tableName} 
+		update  ${tb.tableName}
 		<set>
 <#list tb.columns as item>
 	<#assign x=0 />
@@ -169,7 +169,7 @@
     <!-- 查询所有 -->
     <select id="get${tb.fUpperTName}All" parameterType="${tb.fLowerTName}Query" resultMap="${tb.fLowerTName}Result">
 		SELECT 
-		<include refid="${tb.fLowerTName}Field" />  
+		<include refid="${tb.fLowerTName}Field" />
 		from  
 		${tb.tableName}<include refid="condition" />
 	</select>
@@ -185,7 +185,7 @@
 		SELECT <include refid="${tb.fLowerTName}Field" />  from  ${tb.tableName}
 		<include refid="condition" />
 		<if test="sortname !=null">
-		ORDER BY ${"$"}{sortname} ${"$"}{sortorder} 
+		ORDER BY ${"$"}{sortname} ${"$"}{sortorder}
 		</if>
 		LIMIT #${"{startRow}"},#${"{endRow}"}
 	</select>

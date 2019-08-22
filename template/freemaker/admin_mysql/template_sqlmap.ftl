@@ -82,7 +82,7 @@
 		<selectKey resultType="long" order="BEFORE" keyProperty="${tb.tableKey[0].fLowerkey}">
 			select ${tb.allUpperTName}_SEQ.nextval as ${tb.tableKey[0].fAUpperkey} from dual
 		</selectKey>
-			(<#list tb.columns as item>${item.columnName}<#if item_has_next>,</#if></#list> ) 
+			(<#list tb.columns as item>${item.columnName}<#if item_has_next>,</#if></#list> )
 		values 
 			(<#list tb.columns as item>#${"{${item.fLowerColName},jdbcType=${item.jdbcType}}"}<#if item_has_next>,</#if></#list>)
     </insert>
@@ -96,12 +96,12 @@
     <delete id="delete${tb.fUpperTName}ByCondition" parameterType="${tb.fLowerTName}Query" >
     	delete 
     	from 
-    	${tb.tableName}<include refid="condition" /> 
+    	${tb.tableName}<include refid="condition" />
     </delete>
     
     <!-- 根据id修改 -->
     <update id="update${tb.fUpperTName}ById" parameterType="${tb.fLowerTName}Query">
-		update  ${tb.tableName} 
+		update  ${tb.tableName}
 		<set>
 <#list tb.columns as item>
 	<#assign x=0 />
@@ -129,13 +129,13 @@
 		</set>
 		<#if (tb.tableKey?size>0) > 
 		where
-			<#list tb.tableKey as item>${item.keyStr} = #${"{${item.fLowerkey}}"}<#if item_has_next> and </#if></#list> 
+			<#list tb.tableKey as item>${item.keyStr} = #${"{${item.fLowerkey}}"}<#if item_has_next> and </#if></#list>
 		</#if>
     </update>
     
      <!-- 根据条件修改 -->
     <update id="update${tb.fUpperTName}ByCondition" parameterType="map">
-		update  ${tb.tableName} 
+		update  ${tb.tableName}
 		<set>
 <#list tb.columns as item>
 	<#assign x=0 />
@@ -170,7 +170,7 @@
     <!-- 查询所有 -->
     <select id="get${tb.fUpperTName}All" parameterType="${tb.fLowerTName}Query" resultMap="${tb.fLowerTName}Result">
 		SELECT 
-		<include refid="${tb.fLowerTName}Field" />  
+		<include refid="${tb.fLowerTName}Field" />
 		from  
 		${tb.tableName}<include refid="condition" />
 	</select>
@@ -192,7 +192,7 @@
 				FROM ${tb.tableName}
 				<include refid="condition" />
 				<if test="sort !=null">
-					ORDER BY ${"$"}{sort} ${"$"}{order} 
+					ORDER BY ${"$"}{sort} ${"$"}{order}
 				</if>
 			) A 
 			<![CDATA[ WHERE ROWNUM <= #${"{endRow}"} ]]>

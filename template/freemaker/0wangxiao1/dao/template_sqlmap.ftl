@@ -44,7 +44,7 @@
 		</#list>
 		<#list tb.tableKey as item>
 			<if test="${item.keyStr}List != null and ${item.keyStr}List.size()>0" >
-				and ${item.keyStr} in 
+				and ${item.keyStr} in
 				<foreach item="item" index="index" collection="${item.keyStr}List" open="(" separator="," close=")">
     				#${"{item}"} <#assign x=x+1 />
     			</foreach>
@@ -88,13 +88,13 @@
     
     <!-- 新增 -->	
 	<insert id="insert" parameterType="${tb.fLowerTName}">
-		insert into ${tb.tableName}(<#list tb.columns as item>${item.columnName}<#if item_has_next>,</#if></#list> ) 
+		insert into ${tb.tableName}(<#list tb.columns as item>${item.columnName}<#if item_has_next>,</#if></#list> )
 		values (<#list tb.columns as item>#${"{${item.fLowerColName},jdbcType=${item.jdbcType}}"}<#if item_has_next>,</#if></#list>)
     </insert>
     
     <!-- 批量新增 -->	
 	<insert id="insertBatch" parameterType="java.util.List">
-       insert into ${tb.tableName}(<#list tb.columns as item>${item.columnName}<#if item_has_next>,</#if></#list> ) 
+       insert into ${tb.tableName}(<#list tb.columns as item>${item.columnName}<#if item_has_next>,</#if></#list> )
 	   values 
 	   <foreach collection="list" item="obj" index="index" separator="," >
 	 	(<#list tb.columns as item>#${"{obj.${item.fLowerColName}}"}<#if item_has_next>,</#if></#list>)
@@ -108,15 +108,15 @@
     
     <!-- 根据条件进行逻辑删除  (修改数据库数据为删除状态)-->
     <update id="logicDeleteByCondition" parameterType="${tb.fLowerTName}Query" >
-    	update ${tb.tableName} set dr=1 <include refid="condition" /> 
+    	update ${tb.tableName} set dr=1 <include refid="condition" />
     </update>
     
     <!-- 根据条件进行逻辑删除  (修改数据库数据为删除状态)-->
     <update id="logicDeleteByBatchId" parameterType="${tb.fLowerTName}Query" >
-    	update ${tb.tableName} set dr=1 
+    	update ${tb.tableName} set dr=1
     	<#assign x=1 />
     	<#list tb.tableKey as item>
-    	where ${item.keyStr} in 
+    	where ${item.keyStr} in
     	<foreach item="item" index="index" collection="idList" open="(" separator="," close=")">
     		#${"{item}"} <#assign x=x+1 />
     	</foreach><#if item_has_next> and </#if>
@@ -130,14 +130,14 @@
     
     <!-- 根据条件删除 (删除数据库数据)-->
     <delete id="deleteByCondition" parameterType="${tb.fLowerTName}Query" >
-    	delete from ${tb.tableName} <include refid="condition" /> 
+    	delete from ${tb.tableName} <include refid="condition" />
     </delete>
     
     <!-- 根据主键批量删除 (删除数据库数据)-->
     <delete id="deleteByBatchId" parameterType="${tb.fLowerTName}Query" >
     	delete from ${tb.tableName}
 		<#assign x=1 />
-    	<#list tb.tableKey as item>where ${item.keyStr} in 
+    	<#list tb.tableKey as item>where ${item.keyStr} in
     	<foreach item="item" index="index" collection="idList" open="(" separator="," close=")">
     		#${"{item}"} <#assign x=x+1 />
     	</foreach>
@@ -147,7 +147,7 @@
     
     <!-- 根据id修改 -->
     <update id="updateById" parameterType="${tb.fLowerTName}Query">
-		update  ${tb.tableName} 
+		update  ${tb.tableName}
 		<set>
 <#list tb.columns as item>
 	<#assign x=0 />
@@ -174,13 +174,13 @@
 </#list>
 		</set>
 		<#if (tb.tableKey?size>0) > 
-		where <#list tb.tableKey as item>${item.keyStr} = #${"{${item.fLowerkey}}"}<#if item_has_next> and </#if></#list> 
+		where <#list tb.tableKey as item>${item.keyStr} = #${"{${item.fLowerkey}}"}<#if item_has_next> and </#if></#list>
 		</#if>
     </update>
     
      <!-- 根据条件修改 -->
     <update id="updateByCondition" parameterType="map">
-		update  ${tb.tableName} 
+		update  ${tb.tableName}
 		<set>
 	<#list tb.columns as item>
 		<#assign x=0 />
@@ -242,7 +242,7 @@
 	</#list>
 			</set>
 			<#if (tb.tableKey?size>0) > 
-			where <#list tb.tableKey as item>${item.keyStr} = #${"{obj.${item.fLowerkey}}"}<#if item_has_next> and </#if></#list> 
+			where <#list tb.tableKey as item>${item.keyStr} = #${"{obj.${item.fLowerkey}}"}<#if item_has_next> and </#if></#list>
 			</#if>
 	     </foreach>
      	</if>
@@ -254,7 +254,7 @@
 		<include refid="condition" />
         <include refid="conditionExtend" />
 		<if test="sort !=null">
-		    order by ${"$"}{sort} ${"$"}{order} 
+		    order by ${"$"}{sort} ${"$"}{order}
 		</if>
 	</select>
 

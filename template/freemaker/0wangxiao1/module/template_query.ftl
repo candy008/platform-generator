@@ -41,7 +41,7 @@ public class ${tb.fUpperTName}Query <#if  cfb.parentClassName!="" >extends ${cfb
 	
 	<#list tb.tableKey as item>
 	/** 主键集合List **/
-	private List<String> ${item.fLowerkey}List;	
+	private List<String> ${item.fLowerkey}List;
     </#list>
 	
 	<#list tb.columns as item>

@@ -11,16 +11,16 @@ import Routes from './routes'
 import 'tinper-bee/assets/tinper-bee.css'
 import "./app.less"
 
-
 const MiddlewareConfig = [];
-
 
 mirror.defaults({
     historyMode: "hash",
     middlewares: MiddlewareConfig
 });
 
-
-render(<Router>
-    <Routes/>
-</Router>, document.querySelector("#app"));
+render(
+    <Router>
+        <Routes/>
+    </Router>,
+    document.querySelector("#app")
+);

@@ -20,6 +20,7 @@ import ${cfb.packageName}.commons.enums.IConst;
 import com.platform.common.utils.date.DateUtil;
 import com.platform.common.utils.tool.InstanceUtils;
 import com.platform.common.utils.tool.ToolUtils;
+import com.platform.common.invocation.InvocationInfoProxy;
 
 
 /**
@@ -57,12 +58,14 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	public void insertBatch(List<${tb.fUpperTName}> ${tb.fLowerTName}List) {
 		if (!CollectionUtils.isEmpty(${tb.fLowerTName}List)) {
 			for (${tb.fUpperTName} ${tb.fLowerTName} : ${tb.fLowerTName}List) {
+				${tb.fLowerTName}.setCreated(DateUtil.getTs());
+				${tb.fLowerTName}.setModified(DateUtil.getTs());
+				${tb.fLowerTName}.setCreator(InvocationInfoProxy.getUserid());
+				${tb.fLowerTName}.setModifier(InvocationInfoProxy.getUserid());
+				${tb.fLowerTName}.setTenantId(InvocationInfoProxy.getTenantid());
 			<#list tb.columns as item>
 				<#if (item.columnName)=="dr">
 				${tb.fLowerTName}.setDr(IConst.DR_STATE_N);
-			    </#if>
-			    <#if (item.columnName)=="create_time">
-				${tb.fLowerTName}.setCreateTime(DateUtil.getTs());
 			    </#if>
 			    <#if (item.columnName)=="ts">
 				${tb.fLowerTName}.setTs(DateUtil.getTs());
@@ -184,6 +187,8 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean updateById(${tb.fUpperTName} ${tb.fLowerTName}) {
+		${tb.fLowerTName}.setModified(DateUtil.getTs());
+		${tb.fLowerTName}.setModifier(InvocationInfoProxy.getUserid());
 	    <#list tb.columns as item>
 		<#if (item.columnName)=="last_modified">
 		${tb.fLowerTName}.setLastModified(DateUtil.getTs());
@@ -222,6 +227,8 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 		Result result = new Result();
 		if (!CollectionUtils.isEmpty(${tb.fLowerTName}List)) {
 			for (${tb.fUpperTName} ${tb.fLowerTName} : ${tb.fLowerTName}List) {
+				${tb.fLowerTName}.setModified(DateUtil.getTs());
+				${tb.fLowerTName}.setModifier(InvocationInfoProxy.getUserid());
 				<#list tb.columns as item>
 		    	<#if (item.columnName)=="ts">
 				${tb.fLowerTName}.setTs(DateUtil.getTs());

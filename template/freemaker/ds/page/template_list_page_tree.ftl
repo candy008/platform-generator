@@ -30,7 +30,7 @@
 	<!-- layout end -->
 
 	<!-- ${tb.fLowerTName} datagrid toolbar start -->
-	<div class="${tb.fLowerTName}DataGridTb" style="height:auto" > 
+	<div class="${tb.fLowerTName}DataGridTb" style="height:auto" >
 		<!-- 工具条 start -->
 		<a href="javascript:void(0)" class="easyui-linkbutton view-btn" data-options="iconCls:'icon-large-smartart',plain:true" >查看</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton add-btn" data-options="iconCls:'icon-add',plain:true" >添加</a>

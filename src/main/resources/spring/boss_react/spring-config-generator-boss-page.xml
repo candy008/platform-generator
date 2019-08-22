@@ -95,25 +95,25 @@
                         <value>{
                             "path":"/ucf-apps",
                             "parentClassName":"","parentPackageName":"",
-                            "templateName":"page/src/routes/list/container",
+                            "templateName":"page/src/routes/container",
                             "fileName":"container",
-                            "filePath":"/src/routes/list",
+                            "filePath":"/src/routes/",
                             "fileType":"js","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
                         </value>
                         <value>{
                             "path":"/ucf-apps",
                             "parentClassName":"","parentPackageName":"",
-                            "templateName":"page/src/routes/list/model",
+                            "templateName":"page/src/routes/model",
                             "fileName":"model",
-                            "filePath":"/src/routes/list",
+                            "filePath":"/src/routes/",
                             "fileType":"js","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
                         </value>
                         <value>{
                             "path":"/ucf-apps",
                             "parentClassName":"","parentPackageName":"",
-                            "templateName":"page/src/routes/list/service",
+                            "templateName":"page/src/routes/service",
                             "fileName":"service",
-                            "filePath":"/src/routes/list",
+                            "filePath":"/src/routes/",
                             "fileType":"js","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
                         </value>
 
@@ -191,17 +191,34 @@
                         <value>{
                             "path":"/ucf-apps",
                             "parentClassName":"","parentPackageName":"",
-                            "templateName":"page/src/routes/edit/components/OrderChild/index",
+                            "templateName":"page/src/routes/edit/components/MainForm/index",
                             "fileName":"index",
-                            "filePath":"/src/routes/edit/components/OrderChild",
+                            "filePath":"/src/routes/edit/components/MainForm",
                             "fileType":"js","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
                         </value>
                         <value>{
                             "path":"/ucf-apps",
                             "parentClassName":"","parentPackageName":"",
-                            "templateName":"page/src/routes/edit/components/OrderChild/index.less",
+                            "templateName":"page/src/routes/edit/components/MainForm/index.less",
                             "fileName":"index",
-                            "filePath":"/src/routes/edit/components/OrderChild",
+                            "filePath":"/src/routes/edit/components/MainForm",
+                            "fileType":"less","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
+                        </value>
+                        <!-- src/routes/edit/components/SubTableGroup 目录下的文件 -->
+                        <value>{
+                            "path":"/ucf-apps",
+                            "parentClassName":"","parentPackageName":"",
+                            "templateName":"page/src/routes/edit/components/SubTableGroup/index",
+                            "fileName":"index",
+                            "filePath":"/src/routes/edit/components/SubTableGroup",
+                            "fileType":"js","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
+                        </value>
+                        <value>{
+                            "path":"/ucf-apps",
+                            "parentClassName":"","parentPackageName":"",
+                            "templateName":"page/src/routes/edit/components/SubTableGroup/index.less",
+                            "fileName":"index",
+                            "filePath":"/src/routes/edit/components/SubTableGroup",
                             "fileType":"less","fileNameSuffix":"","packageSuffix":"!myadmintag!"}
                         </value>
 

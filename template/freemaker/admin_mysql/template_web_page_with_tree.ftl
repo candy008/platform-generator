@@ -25,7 +25,7 @@
 	 <!-- layout center -->
 
 	<!-- ${tb.fLowerTName} datagrid toolbar start -->
-	<div id="${tb.fLowerTName}DataGridTb" style="height:auto" > 
+	<div id="${tb.fLowerTName}DataGridTb" style="height:auto" >
 		<!-- 工具条 start -->
 		<a href="javascript:void(0)" id="${tb.fLowerTName}_view-btn" class="easyui-linkbutton view-btn" data-options="iconCls:'icon-large-smartart',plain:true" >查看</a>
 		<a href="javascript:void(0)" id="${tb.fLowerTName}_add-btn" class="easyui-linkbutton add-btn" data-options="iconCls:'icon-add',plain:true" >添加</a>

@@ -56,7 +56,7 @@
                     <list>
                         <!-- domain -->
                         <value>{
-                            "path":"/ifbp-boss-domain/src/main/java/",
+                            "path":"/imfbp-bs-domain/src/main/java/",
                             "parentClassName":"",
                             "parentPackageName":"",
                             "templateName":"module/template_model",
@@ -76,21 +76,27 @@
 
                         <!-- query -->
                         <value>{
-                            "path":"/ifbp-boss-domain/src/main/java/",
+                            "path":"/imfbp-bs-domain/src/main/java/",
                             "parentClassName":"BaseQuery","parentPackageName":"com.platform.common.utils.query",
                             "templateName":"module/template_query",
                             "fileType":"java","fileNameSuffix":"Query","packageSuffix":"domain.!allLowerTName!.query",
                             }
                         </value>
-                        <value>{
-                            "path":"/ifbp-boss-domain/src/main/java/",
-                            "parentClassName":"",
-                            "parentPackageName":"",
-                            "templateName":"module/template_query_extend",
-                            "fileType":"java","fileNameSuffix":"QueryExtend","packageSuffix":"domain.!allLowerTName!.query"}
-                        </value>
+<!--                        <value>{-->
+<!--                            "path":"/imfbp-bs-domain/src/main/java/",-->
+<!--                            "parentClassName":"",-->
+<!--                            "parentPackageName":"",-->
+<!--                            "templateName":"module/template_query_extend",-->
+<!--                            "fileType":"java","fileNameSuffix":"QueryExtend","packageSuffix":"domain.!allLowerTName!.query"}-->
+<!--                        </value>-->
                         <!-- query -->
-
+                        <value>{
+                            "path":"/imfbp-bs-service/src/main/java/",
+                            "parentClassName":"","parentPackageName":"",
+                            "templateName":"service/template_serviceImpl_new",
+                            "fileType":"java","fileNameSuffix":"ServiceImpl","packageSuffix":"service.!myadmintag!.impl"
+                            }
+                        </value>
                         <!-- mapping -->
                         <!--<value>{-->
                             <!--"path":"/ifbp-boss-dao/src/main/resources/",-->
@@ -100,7 +106,7 @@
                             <!--}-->
                         <!--</value>-->
                         <value>{
-                            "path":"/ifbp-boss-dao/src/main/resources/",
+                            "path":"/imfbp-bs-dao/src/main/resources/",
                             "parentClassName":"","parentPackageName":"",
                             "templateName":"dao/template_sqlmap","fileType":"xml",
                             "fileNameSuffix":"Mapper","packageSuffix":"sqlmap.!allLowerTName!"

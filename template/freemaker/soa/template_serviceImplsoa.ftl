@@ -15,12 +15,12 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 
 	@Override
 	public void insert${tb.fUpperTName}(${tb.fUpperTName} ${tb.fLowerTName}){
-		${tb.fLowerTName}Manager.insert${tb.fUpperTName}(${tb.fLowerTName});	
+		${tb.fLowerTName}Manager.insert${tb.fUpperTName}(${tb.fLowerTName});
 	}
 	
 	@Override
 	public boolean delete${tb.fUpperTName}ById(${tb.fUpperTName} ${tb.fLowerTName}){
-		return ${tb.fLowerTName}Manager.delete${tb.fUpperTName}ById(${tb.fLowerTName});	
+		return ${tb.fLowerTName}Manager.delete${tb.fUpperTName}ById(${tb.fLowerTName});
 	}
 	
 	@Override
