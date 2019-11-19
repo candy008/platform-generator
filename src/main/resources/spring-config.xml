@@ -16,7 +16,12 @@
 	<!-- <import resource="spring/spring-config-generator-springmvc_bj.xml" /> -->
 	<!--<import resource="spring/wangxiao/spring-config-generator-wares-page.xml" />-->
 <!--	<import resource="spring/boss_react/spring-config-generator-boss.xml" />-->
-	<import resource="spring/boss_react/spring-config-generator-boss-all.xml" />
+<!--	<import resource="spring/boss_react/spring-config-generator-boss.xml" />-->
+<!--	<import resource="spring/spring-config-datasource.xml" />-->
+
+	<import resource="spring/eis_react_pay/spring-config-generator-boss.xml" />
+
+<!--    <import resource="spring/boss_react/spring-config-generator-boss.xml" />-->
 	<import resource="spring/spring-config-datasource.xml" />
 
 </beans>
