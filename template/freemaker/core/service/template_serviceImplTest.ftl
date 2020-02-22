@@ -53,13 +53,13 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 		</#if>
 		</#list>
 	
-		${tb.fLowerTName}Service.insert${tb.fUpperTName}(${tb.fLowerTName});	
+		${tb.fLowerTName}Service.insert${tb.fUpperTName}(${tb.fLowerTName});
 	}
 	
 	@Test
 	public void delete${tb.fUpperTName}ById(){
 		${tb.fUpperTName}Query ${tb.fLowerTName}Query = new ${tb.fUpperTName}Query();
-		${tb.fLowerTName}Service.delete${tb.fUpperTName}ById(${tb.fLowerTName}Query);	
+		${tb.fLowerTName}Service.delete${tb.fUpperTName}ById(${tb.fLowerTName}Query);
 	}
 	
 	@Test
@@ -80,7 +80,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 		</#if>
 		</#list>
 		
-		${tb.fLowerTName}Service.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);	
+		${tb.fLowerTName}Service.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -93,13 +93,13 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 		${tb.fUpperTName}Query ${tb.fLowerTName}Query = new ${tb.fUpperTName}Query();
 		String batchId = "1,2,3";
 		${tb.fLowerTName}Query.setBatchId(batchId);
-		${tb.fLowerTName}Service.delete${tb.fUpperTName}ByBatchId(${tb.fLowerTName}Query);	
+		${tb.fLowerTName}Service.delete${tb.fUpperTName}ByBatchId(${tb.fLowerTName}Query);
 	}
 	
 	@Test
 	public void logicDelete${tb.fUpperTName}ById(){
 		${tb.fUpperTName}Query ${tb.fLowerTName}Query = new ${tb.fUpperTName}Query();
-		${tb.fLowerTName}Service.logicDelete${tb.fUpperTName}ById(${tb.fLowerTName}Query);	
+		${tb.fLowerTName}Service.logicDelete${tb.fUpperTName}ById(${tb.fLowerTName}Query);
 	}
 	
 	@Test
@@ -120,7 +120,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 		</#if>
 		</#list>
 		
-		${tb.fLowerTName}Service.logicDelete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);	
+		${tb.fLowerTName}Service.logicDelete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -133,7 +133,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix}{
 		${tb.fUpperTName}Query ${tb.fLowerTName}Query = new ${tb.fUpperTName}Query();
 		String batchId = "1,2,3";
 		${tb.fLowerTName}Query.setBatchId(batchId);
-		${tb.fLowerTName}Service.logicDelete${tb.fUpperTName}ByBatchId(${tb.fLowerTName}Query);	
+		${tb.fLowerTName}Service.logicDelete${tb.fUpperTName}ByBatchId(${tb.fLowerTName}Query);
 	}
 	
 	@Test

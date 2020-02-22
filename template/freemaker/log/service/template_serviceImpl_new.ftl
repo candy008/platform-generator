@@ -88,7 +88,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean delete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean delete${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -115,7 +115,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 			//TODO 如果是多主键修要修改，如果不是删除就可以
 			String [] batchIdArr = ${tb.fLowerTName}Query.getBatchId().split(",");
 			data.put("batchId1",batchIdArr);
-			boolean flat = ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByBatchId(data);	
+			boolean flat = ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByBatchId(data);
 			result.setSuccess(flat);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -130,7 +130,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean logicDelete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.logicDelete${tb.fUpperTName}ById(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.logicDelete${tb.fUpperTName}ById(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -140,7 +140,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean logicDelete${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.logicDelete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.logicDelete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -158,7 +158,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 			String [] batchIdArr = ${tb.fLowerTName}Query.getBatchId().split(",");
 			data.put("batchId1",batchIdArr);
 			data.put("batchId2",batchIdArr);
-			boolean flat = ${tb.fLowerTName}Dao.logicDelete${tb.fUpperTName}ByBatchId(data);	
+			boolean flat = ${tb.fLowerTName}Dao.logicDelete${tb.fUpperTName}ByBatchId(data);
 			result.setSuccess(flat);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

@@ -64,6 +64,11 @@ public class GeneratorCenter {
 				if(generatorTableList!=null&&generatorTableList.size()>0){
 					for (GeneratorTable generatorTable: generatorTableList) {
 						generatorFile.generatorDataToFile(generatorConfig, generatorTable);
+						if(generatorTable.getChildTable()!=null&&generatorTable.getChildTable().size()>0){
+							for (GeneratorTable childTable: generatorTable.getChildTable()) {
+								generatorFile.generatorDataToFile(generatorConfig, childTable);
+							}
+						}
 					}
 				}
 			}

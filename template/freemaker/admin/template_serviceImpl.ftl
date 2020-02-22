@@ -31,7 +31,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 * @return
 	 */
 	public void insert${tb.fUpperTName}(${tb.fUpperTName} ${tb.fLowerTName}){
-		${tb.fLowerTName}Dao.insert${tb.fUpperTName}(${tb.fLowerTName});	
+		${tb.fLowerTName}Dao.insert${tb.fUpperTName}(${tb.fLowerTName});
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 * @return
 	 */
 	public boolean delete${tb.fUpperTName}ById(Long id){
-		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(id);	
+		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(id);
 	}
 	
 	/**
@@ -49,7 +49,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 * @return
 	 */
 	public boolean delete${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);
 	}
 	
 	

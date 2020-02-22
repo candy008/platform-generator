@@ -41,7 +41,7 @@ public class GeneratorDaoImpl implements GeneratorDao {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
-
+        //generatorConfig.setChildTable(false);
         if(generatorConfig.isChildTable()){
             Map<String,String> tableMap = JSONObject.fromObject(tableName);
             String masterTable = tableMap.get("master");
@@ -55,6 +55,9 @@ public class GeneratorDaoImpl implements GeneratorDao {
                 for(String table :childTableName) {
                     List<GeneratorTable> childTables = getGeneratorTable(connection, table, generatorConfig, typeConver);
                     if (childTables != null && childTables.size() > 0){
+                        for (GeneratorTable childTable:childTables){
+                            childTable.setChild(true);
+                        }
                         childTableList.add(childTables.get(0));
                     }
                 }

@@ -32,7 +32,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public void insert${tb.fUpperTName}(${tb.fUpperTName} ${tb.fLowerTName}){
-		${tb.fLowerTName}Dao.insert${tb.fUpperTName}(${tb.fLowerTName});	
+		${tb.fLowerTName}Dao.insert${tb.fUpperTName}(${tb.fLowerTName});
 	}
 	
 	/**
@@ -42,7 +42,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean delete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ById(${tb.fLowerTName}Query);
 	}
 	
 	/**
@@ -52,7 +52,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public boolean delete${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query ${tb.fLowerTName}Query){
-		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);	
+		return ${tb.fLowerTName}Dao.delete${tb.fUpperTName}ByCondition(${tb.fLowerTName}Query);
 	}
 	
 	

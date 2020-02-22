@@ -66,6 +66,17 @@ public class GeneratorTable {
 	
 	private Map<String, String> packageMap;
 
+	public boolean isChild() {
+		return child;
+	}
+
+	public void setChild(boolean child) {
+		this.child = child;
+	}
+
+	//是否为子
+	private boolean child;
+
 
 	public GeneratorTable(){
 		columns = new ArrayList<GeneratorColumns>();
