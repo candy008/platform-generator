@@ -12,7 +12,7 @@ import com.imfbp.boot.common.utils.page.PaginatedList;
 import com.imfbp.boot.common.utils.page.impl.MysqlPaginatedArrayList;
 import com.imfbp.boot.common.web.result.GridResult;
 import com.imfbp.boot.common.web.result.Result;
-import com.imfbp.boot.common.utils.primarykey.PrimaryKeyUtil;
+import com.imfbp.boot.common.utils.primarykey.SnowFlakePrimaryKey;
 import ${cfb.packageName}.domain.${mytagprizepackage1}.${tb.fUpperTName};
 import ${cfb.packageName}.domain.${mytagprizepackage1}.query.${tb.fUpperTName}Query;
 import ${cfb.packageName}.dao.${mytagprizepackage}.${tb.fUpperTName}Dao;
@@ -25,8 +25,9 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	@Resource(name = "${tb.fLowerTName}Dao")
 	private ${tb.fUpperTName}Dao ${tb.fLowerTName}Dao;
 
-	@Autowired
-	private PrimaryKeyUtil primaryKeyUtil;
+	@Resource(name = "snowFlakePrimaryKey")
+	private SnowFlakePrimaryKey snowFlakePrimaryKey;
+
 	/**
 	 * 添加
 	 * @param ${tb.fLowerTName}
@@ -34,7 +35,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	 */
 	@Override
 	public void insert${tb.fUpperTName}(${tb.fUpperTName} ${tb.fLowerTName}){
-		String pk = primaryKeyUtil.getPrimaryKey();
+		String pk = snowFlakePrimaryKey.getPrimaryKey();
 		<#list tb.columns as item>
 	    <#if (item.columnName)=="dr">
 		${tb.fLowerTName}.setDr(0);
@@ -54,7 +55,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	}
 	/**
 	 * 批量添加
-	 * @param List<${tb.fLowerTName}>
+	 * @param ${tb.fLowerTName}List
 	 * @return
 	 */
 	public void insertBatch${tb.fUpperTName}(List<${tb.fUpperTName}> ${tb.fLowerTName}List){
@@ -71,7 +72,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 				${tb.fLowerTName}List.get(i).setTs(DateUtil.getTs());
 			    </#if>
 		    	</#list>
-				String pk = primaryKeyUtil.getPrimaryKey();
+				String pk = snowFlakePrimaryKey.getPrimaryKey();
 				${tb.fLowerTName}List.get(i).set${tb.tableKey[0].fUpperkey}(pk);
 			}
 			${tb.fLowerTName}Dao.insertBatch${tb.fUpperTName}(${tb.fLowerTName}List);
@@ -79,7 +80,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	}
 	/**
 	 * 根据Id删除 (真正删除数据库数据)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -121,7 +122,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据Id逻辑删除 (修改数据库数据为删除状态)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -206,7 +207,8 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据条件修改
-	 * @param data
+	 * @param record
+	 * @param parameter
 	 * @return
 	 */
 	@Override
@@ -218,7 +220,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	}
 	/**
 	 * 根据Id批量修改
-	 * @param ${tb.fLowerTName}Query
+	 * @param ${tb.fLowerTName}List
 	 * @return
 	 */
 	public Result update${tb.fUpperTName}ByBatchId(List<${tb.fUpperTName}> ${tb.fLowerTName}List){

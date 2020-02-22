@@ -19,14 +19,14 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 批量添加
-	 * @param List<${tb.fLowerTName}>
+	 * @param ${tb.fLowerTName}List
 	 * @return
 	 */
 	public void insertBatch${tb.fUpperTName}(List<${tb.fUpperTName}> ${tb.fLowerTName}List);
 	
 	/**
 	 * 根据Id删除
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	public boolean delete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query);
@@ -47,7 +47,7 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 	
 	/**
 	 * 根据Id逻辑删除 (修改数据库数据为删除状态)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	public boolean logicDelete${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query);
@@ -74,35 +74,36 @@ public interface ${tb.fUpperTName}${cfb.fileNameSuffix}{
 
 	/**
 	 * 批量添加
-	 * @param List<${tb.fLowerTName}>
+	 * @param ${tb.fLowerTName}List
 	 * @return
 	 */
 	public void insertBatch${tb.fUpperTName}(List<${tb.fUpperTName}> ${tb.fLowerTName}List);
 	
 	/**
 	 * 根据Id修改
-	 * @param id
+	 * @param ${tb.fLowerTName
 	 * @return
 	 */
 	public boolean update${tb.fUpperTName}ById(${tb.fUpperTName} ${tb.fLowerTName});
 	
 	/**
 	 * 根据条件修改
-	 * @param data
+	 * @param ${tb.fUpperTName}Query record
+	 * @param ${tb.fUpperTName}Query parameter
 	 * @return
 	 */
 	public boolean update${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query record,${tb.fUpperTName}Query parameter);
 	
 	/**
 	 * 根据Id批量修改
-	 * @param ${tb.fLowerTName}Query
+	 * @param ${tb.fLowerTName}List
 	 * @return
 	 */
 	public Result update${tb.fUpperTName}ByBatchId(List<${tb.fUpperTName}> ${tb.fLowerTName}List);
 	
 	/**
 	 * 根据id查询
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	public ${tb.fUpperTName} get${tb.fUpperTName}ById(${tb.fUpperTName}Query ${tb.fLowerTName}Query);

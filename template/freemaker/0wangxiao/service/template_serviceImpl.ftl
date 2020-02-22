@@ -24,9 +24,9 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 
 
 	private ${tb.fUpperTName}Dao ${tb.fLowerTName}Dao;
-	@Autowired
-	private PrimaryKeyUtil primaryKeyUtil;
 
+	@Autowired
+	private SnowFlakePrimaryKey snowFlakePrimaryKey;
 	/**
 	 * 添加
 	 * @param ${tb.fLowerTName}
@@ -52,7 +52,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 批量添加
-	 * @param List<${tb.fLowerTName}>
+	 * @param ${tb.fLowerTName}List
 	 * @return
 	 */
 	public void insertBatch${tb.fUpperTName}(List<${tb.fUpperTName}> ${tb.fLowerTName}List){
@@ -77,7 +77,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	}
 	/**
 	 * 根据Id删除 (真正删除数据库数据)
-	 * @param id
+	 * @param  ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据Id逻辑删除 (修改数据库数据为删除状态)
-	 * @param id
+	 * @param ${tb.fLowerTName}Query
 	 * @return
 	 */
 	@Override
@@ -198,9 +198,10 @@ public class ${tb.fUpperTName}${cfb.fileNameSuffix} implements ${tb.fUpperTName}
 	
 	/**
 	 * 根据条件修改
-	 * @param data
+	 * @param record
+	 * @param parameter
 	 * @return
-	 */
+	   */
 	@Override
 	public boolean update${tb.fUpperTName}ByCondition(${tb.fUpperTName}Query record,${tb.fUpperTName}Query parameter){
 		Map<String, Object> data = new Hashtable<String, Object>();
